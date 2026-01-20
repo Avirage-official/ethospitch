@@ -1,107 +1,335 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import RevenueProjectionChart from "../components/finance/RevenueProjectionChart.astro";
+
 ---
 
 <BaseLayout>
-  <section style="max-width: 760px; padding-top: 4rem;">
-    <h1 style="
-      font-size: 2.8rem;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
-    ">
-      Financials.
-    </h1>
+  <section class="financials-root">
 
-    <p style="
-      font-size: 1.1rem;
-      line-height: 1.6;
-      max-width: 640px;
-      margin-bottom: 3.5rem;
-    ">
-      ETHOS is designed to compound value through alignment,
-      not extract it through attention.
-    </p>
-
-    <!-- Model -->
-    <div style="
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 2.5rem;
-      margin-bottom: 3rem;
-      max-width: 680px;
-    ">
-      <strong>Revenue model</strong>
-      <p style="margin-top: 0.75rem;">
-        Businesses pay for aligned visibility within ETHOS.
-        Users never pay with attention, data, or manipulation.
-      </p>
-    </div>
-
-    <!-- Economics -->
-    <div style="
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 2.5rem;
-      margin-bottom: 3rem;
-      max-width: 680px;
-    ">
-      <strong>Unit economics</strong>
-      <p style="margin-top: 0.75rem;">
-        Software-first delivery creates high operating leverage.
-        Margins improve as signal density increases.
-      </p>
-      <ul style="margin-top: 1rem; padding-left: 1rem;">
-        <li>No content farms</li>
-        <li>No moderation armies</li>
-        <li>No paid acquisition dependency</li>
-      </ul>
-    </div>
-
-    <!-- Costs -->
-    <div style="
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 2.5rem;
-      margin-bottom: 3rem;
-      max-width: 680px;
-    ">
-      <strong>Cost structure</strong>
-      <p style="margin-top: 0.75rem;">
-        Focused on product quality and system depth.
-      </p>
-      <ul style="margin-top: 1rem; padding-left: 1rem;">
-        <li>Infrastructure</li>
-        <li>Research and system refinement</li>
-        <li>Core product engineering</li>
-      </ul>
-    </div>
-
-    <!-- Use of funds -->
-    <div style="
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 2.5rem;
-      margin-bottom: 3rem;
-      max-width: 680px;
-    ">
-      <strong>Use of funds</strong>
-      <p style="margin-top: 0.75rem;">
-        Capital is deployed to deepen signal,
-        not accelerate noise.
-      </p>
-      <ul style="margin-top: 1rem; padding-left: 1rem;">
-        <li>Signal validation and density</li>
-        <li>Experience quality</li>
-        <li>Long-term system integrity</li>
-      </ul>
-    </div>
-
-    <!-- Closing -->
-    <div style="
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 3rem;
-      max-width: 560px;
-    ">
+    <!-- INTRO -->
+    <section class="financials-intro">
+      <h1>Financial model</h1>
       <p>
-        ETHOS optimizes for durability —
-        not short-term extraction.
+        ETHOS is built for long-term durability.
+        Revenue scales through system trust, not extraction.
       </p>
-    </div>
+    </section>
+
+    <!-- WHY NOT ADS -->
+    <section class="finance-block">
+      <header class="block-head">
+        <h2>Why not ads first</h2>
+        <p>
+          Advertising optimizes for attention. ETHOS optimizes for alignment.
+        </p>
+      </header>
+
+      <div class="block-body two-col">
+        <div class="explain">
+          <p>
+            Early advertising introduces incentives that degrade trust,
+            distort signal quality, and bias the system toward engagement over fit.
+          </p>
+          <p>
+            ETHOS delays ads intentionally to preserve data integrity,
+            user safety, and long-term monetization power.
+          </p>
+        </div>
+
+        <div class="principles">
+          <div class="principle">No attention harvesting</div>
+          <div class="principle">No engagement inflation</div>
+          <div class="principle">No signal distortion</div>
+          <div class="principle">Higher future CPMs</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="finance-block">
+      <header class="block-head">
+        <h2>Pricing logic</h2>
+        <p>
+          Businesses pay for relevance, not volume.
+        </p>
+      </header>
+
+      <div class="block-body pricing-grid">
+        <div class="price-card">
+          <span class="tier">Standard</span>
+          <span class="price">$199</span>
+          <span class="period">per month</span>
+          <ul>
+            <li>Aligned visibility</li>
+            <li>Pattern-based demand</li>
+            <li>Mood-aware exposure</li>
+            <li>Aggregated insights</li>
+          </ul>
+        </div>
+
+        <div class="price-card highlight">
+          <span class="tier">Annual</span>
+          <span class="price">$1,999</span>
+          <span class="period">per year</span>
+          <ul>
+            <li>2 months free</li>
+            <li>Preferred placement</li>
+            <li>Early feature access</li>
+            <li>Higher retention</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTIONS -->
+    <section class="finance-block">
+      <header class="block-head">
+        <h2>Revenue projections</h2>
+        <p>
+          Conservative growth. City-by-city expansion.
+        </p>
+      </header>
+<RevenueProjectionChart />
+
+      <div class="chart-wrap">
+        <div class="bar-chart">
+          <div class="bar y1" style="--h:25%">
+            <span class="label">Y1</span>
+            <span class="value">$150k</span>
+          </div>
+          <div class="bar y2" style="--h:55%">
+            <span class="label">Y2</span>
+            <span class="value">$600k</span>
+          </div>
+          <div class="bar y3" style="--h:90%">
+            <span class="label">Y3</span>
+            <span class="value">$1.7M</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENARIOS -->
+    <section class="finance-block">
+      <header class="block-head">
+        <h2>Scenario modeling</h2>
+        <p>
+          Downside, base, and upside outcomes.
+        </p>
+      </header>
+
+      <div class="scenario-grid">
+        <div class="scenario">
+          <span class="case">Downside</span>
+          <span class="amount">$800k ARR</span>
+          <p>Slower onboarding, fewer cities</p>
+        </div>
+        <div class="scenario base">
+          <span class="case">Base case</span>
+          <span class="amount">$1.7M ARR</span>
+          <p>Planned city rollout</p>
+        </div>
+        <div class="scenario">
+          <span class="case">Upside</span>
+          <span class="amount">$3.5M ARR</span>
+          <p>High density & retention</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COSTS -->
+    <section class="finance-block">
+      <header class="block-head">
+        <h2>Cost structure</h2>
+        <p>
+          Capital efficiency is designed, not optimized later.
+        </p>
+      </header>
+
+      <div class="cost-bars">
+        <div class="cost">
+          <span>Infrastructure</span>
+          <div class="track"><div class="fill" style="width:20%"></div></div>
+        </div>
+        <div class="cost">
+          <span>Product & research</span>
+          <div class="track"><div class="fill" style="width:45%"></div></div>
+        </div>
+        <div class="cost">
+          <span>Operations</span>
+          <div class="track"><div class="fill" style="width:15%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSE -->
+    <section class="finance-close">
+      <p>
+        ETHOS prioritizes trust, signal integrity,
+        and long-term platform power.
+      </p>
+    </section>
+
   </section>
 </BaseLayout>
+
+<style>
+.financials-root {
+  padding: 6rem 1.5rem 10rem;
+}
+
+/* INTRO */
+.financials-intro {
+  max-width: 760px;
+  margin: 0 auto 6rem;
+  text-align: center;
+}
+.financials-intro h1 {
+  font-size: 3rem;
+  letter-spacing: -0.03em;
+}
+.financials-intro p {
+  color: rgba(255,255,255,0.7);
+}
+
+/* BLOCKS */
+.finance-block {
+  max-width: 900px;
+  margin: 0 auto 6rem;
+}
+.block-head h2 {
+  font-size: 1.8rem;
+}
+.block-head p {
+  color: rgba(255,255,255,0.7);
+}
+
+/* WHY ADS */
+.two-col {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+}
+.principles {
+  display: grid;
+  gap: 0.6rem;
+}
+.principle {
+  padding: 0.8rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* PRICING */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1.5rem;
+}
+.price-card {
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(120,170,255,0.2);
+  background: rgba(255,255,255,0.05);
+}
+.price-card.highlight {
+  border-color: rgba(120,170,255,0.6);
+}
+.price {
+  font-size: 2.2rem;
+}
+.period {
+  color: rgba(255,255,255,0.6);
+}
+
+/* CHART */
+.chart-wrap {
+  margin-top: 3rem;
+}
+.bar-chart {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+  height: 260px;
+}
+.bar {
+  flex: 1;
+  position: relative;
+}
+.bar::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: var(--h);
+  background: linear-gradient(180deg,#7aa7ff,#4f7cff);
+  border-radius: 12px;
+  animation: grow 1.4s ease forwards;
+}
+.bar span {
+  position: absolute;
+  bottom: -2.5rem;
+  width: 100%;
+  text-align: center;
+}
+.bar .value {
+  bottom: auto;
+  top: -2rem;
+}
+
+@keyframes grow {
+  from { height: 0; }
+}
+
+/* SCENARIOS */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+}
+.scenario {
+  padding: 1.2rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+}
+.scenario.base {
+  border: 1px solid rgba(120,170,255,0.5);
+}
+.case {
+  font-weight: 500;
+}
+
+/* COSTS */
+.cost-bars {
+  display: grid;
+  gap: 1.2rem;
+}
+.track {
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 999px;
+}
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg,#7aa7ff,#4f7cff);
+  border-radius: 999px;
+}
+
+/* CLOSE */
+.finance-close {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  color: rgba(255,255,255,0.7);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .two-col,
+  .pricing-grid,
+  .scenario-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

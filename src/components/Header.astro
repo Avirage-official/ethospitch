@@ -1,40 +1,56 @@
-<nav style="
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 64px;
-  padding: 0 2rem;
-  border-bottom: 1px solid var(--border-subtle);
-">
-  <div style="
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.02em;
-  ">
-  <div style="font-weight: 600; letter-spacing: 0.02em;">
-  <span class="accent">ETHOS</span>
-</div>
-  </div>
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">ETHOS</div>
 
-  <div style="
+    <nav class="links">
+      <a href="/">Home</a>
+      <a href="/system">System</a>
+      <a href="/deck">Deck</a>
+      <a href="/financials">Financials</a>
+      <a href="/roadmap">Roadmap</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .nav-inner {
+    pointer-events: auto;
+    backdrop-filter: blur(18px);
+    background: rgba(20,20,22,0.75);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 999px;
+    padding: 0.75rem 1.5rem;
     display: flex;
     gap: 2rem;
-    font-size: 0.9rem;
-    color: #444;
-  ">
-    <a href="/">Home</a>
-    <a href="/system">System</a>
-    <a href="/deck">Deck</a>
-    <a href="/financials">Financials</a>
-    <a href="/roadmap">Roadmap</a>
-    <a href="/about">About</a>
-  </div>
-</nav>
-<style>
-  nav a {
-    opacity: 0.9;
+    align-items: center;
   }
-  nav a:hover {
-    opacity: 1;
+
+  .brand {
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+
+  .links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .links a {
+    color: #cfcfd4;
+  }
+
+  .links a:hover {
+    color: #ffffff;
   }
 </style>

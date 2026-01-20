@@ -1,0 +1,46 @@
+/* ETHOS Motion System — 2026 */
+
+:root {
+  --enter-duration: 900ms;
+  --enter-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --idle-drift: 60s;
+}
+
+/* -------- ENTRY -------- */
+
+[data-enter] {
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(6px);
+  animation: enter var(--enter-duration) var(--enter-ease) forwards;
+}
+
+[data-enter="delay-1"] { animation-delay: 120ms; }
+[data-enter="delay-2"] { animation-delay: 240ms; }
+[data-enter="delay-3"] { animation-delay: 360ms; }
+
+@keyframes enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* -------- IDLE LIFE -------- */
+
+[data-alive] {
+  animation: idleDrift var(--idle-drift) ease-in-out infinite alternate;
+}
+
+@keyframes idleDrift {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-6px); }
+}
+
+/* -------- EXIT (DULL) -------- */
+
+html.is-leaving {
+  filter: brightness(0.9) saturate(0.85);
+  transition: filter 400ms ease;
+}

@@ -3,34 +3,154 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <section style="max-width: 760px;">
-    <h1 style="
-      font-size: 2.4rem;
-      letter-spacing: -0.025em;
-      margin-bottom: 1.25rem;
-    ">
-      Why ETHOS exists.
-    </h1>
+  <section class="about-root">
 
-    <p style="
-      font-size: 1.05rem;
-      line-height: 1.65;
-      color: #555;
-      max-width: 680px;
-      margin-bottom: 2rem;
-    ">
-      Modern systems help people choose faster.
-      They rarely help people choose better.
-    </p>
+    <!-- OPENING STATEMENT -->
+    <section class="about-opening">
+      <h1>Why ETHOS exists</h1>
+      <p class="lead">
+        Modern systems help people choose faster.<br />
+        They rarely help people choose better.
+      </p>
+    </section>
 
-    <p style="
-      font-size: 1.05rem;
-      line-height: 1.65;
-      color: #555;
-      max-width: 680px;
-    ">
-      ETHOS exists to restore direction — by putting identity
-      before algorithms, and clarity before scale.
-    </p>
+    <!-- PHILOSOPHY FIELD -->
+    <section class="about-field">
+      <div class="thought t1">
+        <p>
+          Choice without clarity creates noise.
+        </p>
+      </div>
+
+      <div class="thought t2">
+        <p>
+          Noise fragments identity.
+        </p>
+      </div>
+
+      <div class="thought t3">
+        <p>
+          Fragmented identity leads to misalignment —
+          in work, relationships, environments, and life direction.
+        </p>
+      </div>
+    </section>
+
+    <!-- CORE BELIEF -->
+    <section class="about-core">
+      <p>
+        ETHOS exists to reverse this.
+      </p>
+
+      <p>
+        By placing identity before algorithms,
+        structure before scale,
+        and alignment before engagement.
+      </p>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="about-close">
+      <p>
+        ETHOS is not a platform.<br />
+        It is an identity system for navigating a complex world.
+      </p>
+    </section>
+
   </section>
 </BaseLayout>
+
+<style>
+/* ROOT */
+.about-root {
+  padding: 8rem 1.5rem 10rem;
+}
+
+/* OPENING */
+.about-opening {
+  max-width: 760px;
+  margin: 0 auto 8rem;
+  text-align: center;
+}
+.about-opening h1 {
+  font-size: 3rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+.about-opening .lead {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.75);
+}
+
+/* FIELD */
+.about-field {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 8rem;
+  min-height: 420px;
+}
+.thought {
+  position: absolute;
+  max-width: 360px;
+  padding: 1.6rem 2rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(120,170,255,0.18);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  animation: drift 18s ease-in-out infinite alternate;
+}
+.thought p {
+  color: rgba(255,255,255,0.75);
+  line-height: 1.55;
+}
+
+.t1 {
+  top: 0;
+  left: 0;
+}
+.t2 {
+  top: 160px;
+  right: 0;
+  animation-delay: 3s;
+}
+.t3 {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 6s;
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(-6px);
+  }
+  to {
+    transform: translateY(6px);
+  }
+}
+
+/* CORE */
+.about-core {
+  max-width: 680px;
+  margin: 0 auto 6rem;
+  text-align: center;
+}
+.about-core p {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 1.5rem;
+}
+
+/* CLOSE */
+.about-close {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about-close p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+}
+</style>

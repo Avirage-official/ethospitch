@@ -1,32 +1,28 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 :root {
-  --bg: #ffffff;
-  --surface: #ffffff;
-  --text-primary: #0b0b0c;
-  --text-secondary: #4b4b4f;
-  --text-muted: #8a8a8f;
-  --border-subtle: rgba(0, 0, 0, 0.06);
+  --bg: #0b0b0c;
+  --bg-elev: #111114;
+  --text: #ffffff;
+  --text-dim: #b3b3b8;
+  --text-muted: #8a8a90;
+  --border: rgba(255,255,255,0.08);
+  --accent: #ff4d4f;
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+
+  --shadow:
+    0 1px 0 rgba(255,255,255,0.04),
+    0 30px 80px -40px rgba(0,0,0,0.9);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b0b0c;
-    --surface: #0f0f12;
-    --text-primary: #f5f5f7;
-    --text-secondary: #c9c9cf;
-    --text-muted: #9a9aa3;
-    --border-subtle: rgba(255, 255, 255, 0.08);
-  }
-}
-
-body {
+html, body {
   margin: 0;
   background: var(--bg);
-  color: var(--text-primary);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -35,48 +31,28 @@ a {
 }
 
 h1, h2, h3 {
-  color: var(--text-primary);
+  letter-spacing: -0.04em;
 }
 
 p {
-  color: var(--text-secondary);
+  color: var(--text-dim);
+  line-height: 1.6;
 }
-/* Subtle rhythm */
-section {
-  margin-bottom: 5rem;
-}
-
-h1 {
-  margin-bottom: 1.25rem;
+.hero {
+  max-width: 720px;
+  margin: 6rem 0 0;
+  text-align: left; /* 🔑 */
 }
 
-h2 {
-  margin-bottom: 0.75rem;
+.hero h1 {
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-p {
-  margin-bottom: 0.75rem;
-}
-/* ETHOS visual system */
-:root {
-  --accent: #6E8BFF;          /* calm electric blue */
-  --accent-soft: #EEF1FF;     /* surface wash */
-  --surface-1: #FFFFFF;      /* base */
-  --surface-2: #F7F8FB;      /* subtle panels */
-}
-
-/* surfaces */
-.surface {
-  background: var(--surface-2);
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-}
-
-/* accents */
-.accent {
-  color: var(--accent);
-}
-
-.accent-border {
-  border-color: var(--accent);
+.hero p {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.75);
 }
