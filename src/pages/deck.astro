@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const slides = [
+  "ETHOS is a compass, not a feed.",
+  "The problem: choice without direction.",
+  "The gap: personalization isn’t understanding.",
+  "The system: identity → signal → experience.",
+  "Why now.",
+];
+---
+
+<BaseLayout>
+  <section style="
+    max-width: 720px;
+    padding-top: 4rem;
+  ">
+    <h1 style="
+      font-size: 2.4rem;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.5rem;
+    ">
+      The ETHOS deck.
+    </h1>
+
+    <p style="
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+    ">
+      Use ← → keys to navigate.
+    </p>
+
+    <div>
+      {slides.map((text, i) => (
+        <div style="
+          padding: 3rem 0;
+          border-top: 1px solid rgba(0,0,0,0.06);
+        ">
+          <strong>Slide {i + 1}</strong>
+          <p style="margin-top: 0.75rem;">
+            {text}
+          </p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
