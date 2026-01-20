@@ -57,3 +57,26 @@ h2 {
 p {
   margin-bottom: 0.75rem;
 }
+/* ETHOS visual system */
+:root {
+  --accent: #6E8BFF;          /* calm electric blue */
+  --accent-soft: #EEF1FF;     /* surface wash */
+  --surface-1: #FFFFFF;      /* base */
+  --surface-2: #F7F8FB;      /* subtle panels */
+}
+
+/* surfaces */
+.surface {
+  background: var(--surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+}
+
+/* accents */
+.accent {
+  color: var(--accent);
+}
+
+.accent-border {
+  border-color: var(--accent);
+}
