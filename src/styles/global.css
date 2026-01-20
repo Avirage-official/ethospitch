@@ -1,0 +1,31 @@
+.page {
+}
+
+.section {
+}
+
+.block {
+}
+
+.grid {
+}
+
+.card {
+  background-color: color-mix(in srgb, var(--aw-color-bg-page) 96%, var(--aw-color-primary) 4%);
+  box-shadow: 0 18px 36px -28px rgba(16, 16, 16, 0.35), 0 2px 6px rgba(16, 16, 16, 0.08);
+  transition: box-shadow 160ms ease;
+}
+
+.card:hover {
+  box-shadow: 0 20px 44px -30px rgba(16, 16, 16, 0.4), 0 4px 10px rgba(16, 16, 16, 0.12);
+}
+
+.primary-link {
+  color: var(--aw-color-primary);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.primary-link:hover {
+  color: var(--aw-color-secondary);
+}

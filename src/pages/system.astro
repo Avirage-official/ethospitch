@@ -7,18 +7,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
-  .page {
-  }
+  @import "../styles/global.css";
 
-  .section {
-  }
-
-  .block {
-  }
-
-  .grid {
-  }
-
-  .card {
+  :global(main) {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--aw-color-bg-page) 94%, var(--aw-color-primary) 6%) 0%,
+      var(--aw-color-bg-page) 65%
+    );
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 20px 50px -40px rgba(16, 16, 16, 0.35);
+    border-radius: 28px;
   }
 </style>
