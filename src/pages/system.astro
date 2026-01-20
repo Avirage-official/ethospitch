@@ -3,52 +3,121 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <section style="max-width: 760px;">
+  <section style="max-width: 760px; padding-top: 4rem;">
     <h1 style="
-      font-size: 2.4rem;
-      letter-spacing: -0.025em;
+      font-size: 2.8rem;
+      letter-spacing: -0.03em;
       margin-bottom: 1.5rem;
     ">
-      A system, not a feed.
+      A system,<br />not a platform.
     </h1>
 
     <p style="
-      font-size: 1.05rem;
-      line-height: 1.65;
-      color: #555;
-      max-width: 680px;
-      margin-bottom: 2.5rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 640px;
+      margin-bottom: 3.5rem;
     ">
-      Most platforms optimize for engagement.
-      ETHOS is built to optimize for fit.
+      Most products optimize for engagement.
+      ETHOS is designed to optimize for fit.
     </p>
 
+    <!-- Core principle -->
+    <div style="
+      border-left: 2px solid var(--border-subtle);
+      padding-left: 1.5rem;
+      margin-bottom: 4rem;
+      max-width: 620px;
+    ">
+      <p>
+        The system starts with identity — not behavior,
+        not preferences, and not content.
+      </p>
+    </div>
+
+    <!-- System flow -->
     <div style="
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      max-width: 640px;
+      gap: 3rem;
+      margin-bottom: 4rem;
     ">
       <div>
-        <strong>Identity</strong><br />
-        <span style="color:#555">
-          Understand how you think, decide, and relate before making choices.
-        </span>
+        <h2 style="font-size: 1.4rem; letter-spacing: -0.02em;">
+          1. Identity
+        </h2>
+        <p style="max-width: 620px;">
+          ETHOS models how a person thinks, decides,
+          relates, and adapts across contexts.
+          This remains stable even as tastes change.
+        </p>
       </div>
 
       <div>
-        <strong>Signal</strong><br />
-        <span style="color:#555">
-          Translate identity into clear preferences that guide discovery.
-        </span>
+        <h2 style="font-size: 1.4rem; letter-spacing: -0.02em;">
+          2. Signal
+        </h2>
+        <p style="max-width: 620px;">
+          Identity is translated into clear signals —
+          what environments support you,
+          what drains you, and what compounds over time.
+        </p>
       </div>
 
       <div>
-        <strong>Experience</strong><br />
-        <span style="color:#555">
-          Discover people, places, and moments that align naturally.
-        </span>
+        <h2 style="font-size: 1.4rem; letter-spacing: -0.02em;">
+          3. Experience
+        </h2>
+        <p style="max-width: 620px;">
+          ETHOS uses signal to align people,
+          places, and experiences —
+          without manipulating attention.
+        </p>
       </div>
+    </div>
+
+    <!-- Contrast -->
+    <div style="
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 3rem;
+      margin-bottom: 4rem;
+    ">
+      <h2 style="font-size: 1.4rem; letter-spacing: -0.02em; margin-bottom: 1.5rem;">
+        How this is different
+      </h2>
+
+      <div style="
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        max-width: 680px;
+      ">
+        <div>
+          <strong>Platforms</strong>
+          <p>
+            React to behavior.
+            Optimize engagement.
+            Increase noise.
+          </p>
+        </div>
+
+        <div>
+          <strong>ETHOS</strong>
+          <p>
+            Starts with identity.
+            Optimizes alignment.
+            Reduces noise.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Closing -->
+    <div>
+      <p style="max-width: 560px;">
+        ETHOS is not trying to keep people inside a product.
+        It’s designed to help people move through life
+        with more clarity.
+      </p>
     </div>
   </section>
 </BaseLayout>

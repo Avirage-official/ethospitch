@@ -1,47 +1,259 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
 const slides = [
-  "ETHOS is a compass, not a feed.",
-  "The problem: choice without direction.",
-  "The gap: personalization isn’t understanding.",
-  "The system: identity → signal → experience.",
-  "Why now.",
+  {
+    id: "intro",
+    title: "ETHOS",
+    content: () => `
+      <p>
+        ETHOS is a compass for modern life.
+        Not a feed. Not a recommender.
+      </p>
+    `
+  },
+  {
+    id: "problem",
+    title: "The problem",
+    content: () => `
+      <p>
+        People don’t lack options.
+        They lack direction.
+      </p>
+      <div class="compare">
+        <div>
+          <strong>Today</strong>
+          <p>Endless choice, low confidence, frequent resets.</p>
+        </div>
+        <div>
+          <strong>Result</strong>
+          <p>Burnout disguised as freedom.</p>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: "gap",
+    title: "The gap",
+    content: () => `
+      <p>
+        Personalization predicts behavior.
+        It does not understand the person.
+      </p>
+      <p class="muted">
+        Engagement is not alignment.
+      </p>
+    `
+  },
+  {
+    id: "insight",
+    title: "The insight",
+    content: () => `
+      <p>
+        Precision beats personalization.
+      </p>
+      <p>
+        Identity must exist before decisions —
+        not after.
+      </p>
+    `
+  },
+  {
+    id: "system",
+    title: "The system",
+    content: () => `
+      <div class="diagram">
+        <span>Identity</span>
+        <span>→</span>
+        <span>Signal</span>
+        <span>→</span>
+        <span>Experience</span>
+      </div>
+      <p class="muted">
+        Direction compounds. Noise resets.
+      </p>
+    `
+  },
+  {
+    id: "wedge",
+    title: "Why experiences",
+    content: () => `
+      <p>
+        Experiences reveal identity faster than content.
+      </p>
+      <p>
+        ETHOS starts where intention meets reality.
+      </p>
+    `
+  },
+  {
+    id: "expansion",
+    title: "Platform expansion",
+    content: () => `
+      <p>
+        Once identity exists, expansion is inevitable —
+        not forced.
+      </p>
+      <ul>
+        <li>People</li>
+        <li>Places</li>
+        <li>Work</li>
+        <li>Wellness</li>
+        <li>Consumption</li>
+      </ul>
+    `
+  },
+  {
+    id: "business",
+    title: "Business model",
+    content: () => `
+      <p>
+        Businesses pay for aligned visibility.
+      </p>
+      <p>
+        Users never pay with attention.
+      </p>
+      <p class="muted">
+        Incentives stay clean.
+      </p>
+    `
+  },
+  {
+    id: "ask",
+    title: "The ask",
+    content: () => `
+      <p>
+        Pre-seed to prove signal density
+        and repeated use.
+      </p>
+      <p>
+        Build once. Compound forever.
+      </p>
+    `
+  }
 ];
 ---
 
 <BaseLayout>
-  <section style="
-    max-width: 720px;
-    padding-top: 4rem;
-  ">
-    <h1 style="
-      font-size: 2.4rem;
-      letter-spacing: -0.025em;
-      margin-bottom: 1.5rem;
-    ">
-      The ETHOS deck.
-    </h1>
+  <section id="deck">
+    <div id="indicator">01 / {String(slides.length).padStart(2, "0")}</div>
 
-    <p style="
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 3rem;
-    ">
-      Use ← → keys to navigate.
-    </p>
+    {slides.map((slide, i) => (
+      <section class="slide" id={`slide-${i}`}>
+        <h1>{slide.title}</h1>
+        <div class="content" set:html={slide.content()} />
+      </section>
+    ))}
 
-    <div>
-      {slides.map((text, i) => (
-        <div style="
-          padding: 3rem 0;
-          border-top: 1px solid rgba(0,0,0,0.06);
-        ">
-          <strong>Slide {i + 1}</strong>
-          <p style="margin-top: 0.75rem;">
-            {text}
-          </p>
-        </div>
-      ))}
-    </div>
+    <button id="export">Export deck (PDF)</button>
   </section>
+
+  <script is:inline>
+    const slides = [...document.querySelectorAll(".slide")];
+    const indicator = document.getElementById("indicator");
+    let index = 0;
+
+    function update() {
+      indicator.textContent =
+        String(index + 1).padStart(2, "0") +
+        " / " +
+        String(slides.length).padStart(2, "0");
+      slides[index].scrollIntoView({ behavior: "smooth" });
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") index = Math.min(index + 1, slides.length - 1);
+      if (e.key === "ArrowLeft") index = Math.max(index - 1, 0);
+      update();
+    });
+
+    document.getElementById("export").onclick = () => {
+      alert("PDF export hook ready.");
+    };
+
+    update();
+  </script>
+
+  <style>
+    #deck {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+      position: relative;
+    }
+
+    #indicator {
+      position: fixed;
+      top: 96px;
+      right: 24px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .slide {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-top: 1px solid var(--border-subtle);
+      animation: fadeIn 160ms ease-out;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+    }
+
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .diagram {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-top: 1rem;
+      padding-left: 1rem;
+    }
+
+    #export {
+      margin-top: 4rem;
+      background: none;
+      border: 1px solid var(--border-subtle);
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #deck {
+        background: #0b0b0c;
+      }
+    }
+  </style>
 </BaseLayout>

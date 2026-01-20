@@ -3,61 +3,105 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <section style="
-    max-width: 760px;
-    padding-top: 4rem;
-  ">
+  <section style="max-width: 760px; padding-top: 4rem;">
     <h1 style="
-      font-size: 2.4rem;
-      letter-spacing: -0.025em;
+      font-size: 2.8rem;
+      letter-spacing: -0.03em;
       margin-bottom: 1.5rem;
     ">
       Financials.
     </h1>
 
     <p style="
-      font-size: 0.95rem;
-      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.6;
       max-width: 640px;
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
     ">
-      High-level structure. No projections theatre.
+      ETHOS is designed to compound value through alignment,
+      not extract it through attention.
     </p>
 
-    <table style="
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
+    <!-- Model -->
+    <div style="
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 2.5rem;
+      margin-bottom: 3rem;
+      max-width: 680px;
     ">
-      <tbody>
-        <tr>
-          <td style="padding: 0.75rem 0; font-weight: 500;">Revenue</td>
-          <td style="padding: 0.75rem 0; color: var(--text-secondary);">
-            Aligned business subscriptions
-          </td>
-        </tr>
+      <strong>Revenue model</strong>
+      <p style="margin-top: 0.75rem;">
+        Businesses pay for aligned visibility within ETHOS.
+        Users never pay with attention, data, or manipulation.
+      </p>
+    </div>
 
-        <tr>
-          <td style="padding: 0.75rem 0; font-weight: 500;">Costs</td>
-          <td style="padding: 0.75rem 0; color: var(--text-secondary);">
-            Infrastructure, product, research
-          </td>
-        </tr>
+    <!-- Economics -->
+    <div style="
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 2.5rem;
+      margin-bottom: 3rem;
+      max-width: 680px;
+    ">
+      <strong>Unit economics</strong>
+      <p style="margin-top: 0.75rem;">
+        Software-first delivery creates high operating leverage.
+        Margins improve as signal density increases.
+      </p>
+      <ul style="margin-top: 1rem; padding-left: 1rem;">
+        <li>No content farms</li>
+        <li>No moderation armies</li>
+        <li>No paid acquisition dependency</li>
+      </ul>
+    </div>
 
-        <tr>
-          <td style="padding: 0.75rem 0; font-weight: 500;">Margins</td>
-          <td style="padding: 0.75rem 0; color: var(--text-secondary);">
-            Software-driven, high operating leverage
-          </td>
-        </tr>
+    <!-- Costs -->
+    <div style="
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 2.5rem;
+      margin-bottom: 3rem;
+      max-width: 680px;
+    ">
+      <strong>Cost structure</strong>
+      <p style="margin-top: 0.75rem;">
+        Focused on product quality and system depth.
+      </p>
+      <ul style="margin-top: 1rem; padding-left: 1rem;">
+        <li>Infrastructure</li>
+        <li>Research and system refinement</li>
+        <li>Core product engineering</li>
+      </ul>
+    </div>
 
-        <tr>
-          <td style="padding: 0.75rem 0; font-weight: 500;">Use of funds</td>
-          <td style="padding: 0.75rem 0; color: var(--text-secondary);">
-            Signal density, system depth, product quality
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- Use of funds -->
+    <div style="
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 2.5rem;
+      margin-bottom: 3rem;
+      max-width: 680px;
+    ">
+      <strong>Use of funds</strong>
+      <p style="margin-top: 0.75rem;">
+        Capital is deployed to deepen signal,
+        not accelerate noise.
+      </p>
+      <ul style="margin-top: 1rem; padding-left: 1rem;">
+        <li>Signal validation and density</li>
+        <li>Experience quality</li>
+        <li>Long-term system integrity</li>
+      </ul>
+    </div>
+
+    <!-- Closing -->
+    <div style="
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 3rem;
+      max-width: 560px;
+    ">
+      <p>
+        ETHOS optimizes for durability —
+        not short-term extraction.
+      </p>
+    </div>
   </section>
 </BaseLayout>

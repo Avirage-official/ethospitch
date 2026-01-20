@@ -3,10 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <section style="
-    max-width: 640px;
-    padding-top: 4rem;
-  ">
+  <section style="max-width: 720px; padding-top: 4rem;">
     <h1 style="
       font-size: 3.25rem;
       line-height: 1.05;
@@ -18,13 +15,116 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </h1>
 
     <p style="
-      font-size: 1.05rem;
-      line-height: 1.65;
-      color: #555;
-      max-width: 560px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 620px;
+      margin-bottom: 3rem;
     ">
-      ETHOS is a system for understanding who you are,
-      so decisions across life start to align — and compound.
+      ETHOS is an identity system that helps people
+      make better decisions — about who they meet,
+      where they go, and how they live.
     </p>
+
+    <!-- What ETHOS is -->
+    <div style="
+      display: grid;
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    ">
+      <div>
+        <strong>Not a social network</strong>
+        <p>
+          No feeds. No followers. No engagement loops.
+        </p>
+      </div>
+
+      <div>
+        <strong>Not a recommender</strong>
+        <p>
+          ETHOS doesn’t guess what you’ll like.
+          It understands who you are.
+        </p>
+      </div>
+
+      <div>
+        <strong>A compass</strong>
+        <p>
+          Identity first. Everything else aligns after.
+        </p>
+      </div>
+    </div>
+
+    <!-- Two products -->
+    <div style="
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 3rem;
+      margin-bottom: 4rem;
+    ">
+      <h2 style="
+        font-size: 1.6rem;
+        letter-spacing: -0.02em;
+        margin-bottom: 2rem;
+      ">
+        Two connected products.
+      </h2>
+
+      <div style="
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      ">
+        <div style="border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: 8px;">
+          <strong>Discovery</strong>
+          <p style="margin-top: 0.75rem;">
+            Find your identity code.
+            Understand how you think,
+            decide, and relate.
+          </p>
+          <a
+            href="https://discovery.ethos-official.com"
+            target="_blank"
+            style="display: inline-block; margin-top: 1rem;"
+          >
+            Visit discovery →
+          </a>
+        </div>
+
+        <div style="border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: 8px;">
+          <strong>Main app</strong>
+          <p style="margin-top: 0.75rem;">
+            Use your code to navigate
+            people, places, and experiences —
+            intentionally.
+          </p>
+          <a
+            href="https://app.ethos-official.com"
+            target="_blank"
+            style="display: inline-block; margin-top: 1rem;"
+          >
+            Open app →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Closing -->
+    <div style="
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 3rem;
+    ">
+      <p style="max-width: 560px;">
+        ETHOS is built for people who want clarity —
+        not more options.
+      </p>
+    </div>
   </section>
 </BaseLayout>
+<style>
+  section {
+    animation: rise 140ms ease-out;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
