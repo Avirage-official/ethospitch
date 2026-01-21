@@ -46,41 +46,188 @@ import RevenueProjectionChart from "../components/finance/RevenueProjectionChart
       </div>
     </section>
 
-    <!-- PRICING -->
-    <section class="finance-block">
-      <header class="block-head">
-        <h2>Pricing logic</h2>
+    <!-- PRICING / BUSINESS VALUE -->
+<section class="finance-block">
+  <header class="block-head">
+    <h2>What businesses pay for</h2>
+    <p>
+      ETHOS is not a discovery tool.  
+      It is a decision-intelligence layer.
+    </p>
+  </header>
+
+  <div class="block-body">
+
+    <!-- CORE VALUE -->
+    <div class="value-grid">
+      <div class="value-card">
+        <h3>Market intelligence</h3>
         <p>
-          Businesses pay for relevance, not volume.
+          ETHOS surfaces who is present in your area,
+          how they behave, and what environments they respond to.
         </p>
-      </header>
-
-      <div class="block-body pricing-grid">
-        <div class="price-card">
-          <span class="tier">Standard</span>
-          <span class="price">$199</span>
-          <span class="period">per month</span>
-          <ul>
-            <li>Aligned visibility</li>
-            <li>Pattern-based demand</li>
-            <li>Mood-aware exposure</li>
-            <li>Aggregated insights</li>
-          </ul>
-        </div>
-
-        <div class="price-card highlight">
-          <span class="tier">Annual</span>
-          <span class="price">$1,999</span>
-          <span class="period">per year</span>
-          <ul>
-            <li>2 months free</li>
-            <li>Preferred placement</li>
-            <li>Early feature access</li>
-            <li>Higher retention</li>
-          </ul>
-        </div>
+        <ul>
+          <li>Local demand composition</li>
+          <li>Behavioural clustering</li>
+          <li>Temporal patterns</li>
+        </ul>
       </div>
-    </section>
+
+      <div class="value-card">
+        <h3>Target market clarity</h3>
+        <p>
+          Businesses see which customer types already align —
+          and which do not.
+        </p>
+        <ul>
+          <li>High-fit vs low-fit segments</li>
+          <li>Environment sensitivity signals</li>
+          <li>Preference-driven filtering</li>
+        </ul>
+      </div>
+
+      <div class="value-card">
+        <h3>Operational insight</h3>
+        <p>
+          ETHOS informs decisions beyond marketing.
+        </p>
+        <ul>
+          <li>Space design implications</li>
+          <li>Experience pacing</li>
+          <li>Offering alignment</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PRICING LOGIC -->
+    <div class="pricing-logic">
+      <div class="price-box">
+        <span class="tier">Business access</span>
+        <span class="price">$199</span>
+        <span class="period">per month</span>
+        <p class="explain">
+          Access to aligned demand, market signals,
+          and behavioural insight within your city.
+        </p>
+      </div>
+
+      <div class="price-box emphasis">
+        <span class="tier">Annual access</span>
+        <span class="price">$1,999</span>
+        <span class="period">per year</span>
+        <p class="explain">
+          Reduced effective rate.
+          Stronger signal continuity.
+          Higher data resolution.
+        </p>
+      </div>
+    </div>
+
+    <!-- FOOTNOTE -->
+    <p class="pricing-note">
+      Businesses are not paying for reach.
+      They are paying to make better decisions with less noise.
+    </p>
+
+  </div>
+</section>
+
+<style>
+/* VALUE GRID */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 1.6rem;
+  margin-top: 2.5rem;
+}
+
+.value-card {
+  padding: 1.6rem;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(120,170,255,0.18);
+}
+
+.value-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.value-card p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 1rem;
+}
+
+.value-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.value-card li {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.4rem;
+}
+
+/* PRICING */
+.pricing-logic {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.price-box {
+  padding: 2rem;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(120,170,255,0.25);
+}
+
+.price-box.emphasis {
+  border-color: rgba(120,170,255,0.55);
+}
+
+.tier {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.price {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin: 0.4rem 0;
+}
+
+.period {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.explain {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+}
+
+/* NOTE */
+.pricing-note {
+  margin-top: 3rem;
+  max-width: 640px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .pricing-logic {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
 
     <!-- PROJECTIONS -->
     <section class="finance-block">

@@ -3,214 +3,244 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <section class="roadmap-root">
+<section class="roadmap-root">
 
-    <!-- INTRO -->
-    <header class="roadmap-intro">
-      <h1>Roadmap</h1>
-      <p>
-        ETHOS is not built on timelines.<br />
-        It is built on proof.
+  <!-- INTRO -->
+  <header class="roadmap-intro">
+    <h1>Roadmap</h1>
+    <p>
+      ETHOS is not built on timelines.<br />
+      It advances only when proof holds.
+    </p>
+  </header>
+
+  <!-- FIELD -->
+  <section class="roadmap-field" id="roadmapField">
+
+    <!-- PATH -->
+    <svg class="path-svg" viewBox="0 0 1000 7600" preserveAspectRatio="none">
+      <path
+        id="pathBase"
+        d="M500 0
+           C480 800, 520 1200, 500 1600
+           C480 2400, 520 2800, 500 3200
+           C480 4000, 520 4400, 500 4800
+           C480 5600, 520 6000, 500 6400
+           C480 7000, 520 7300, 500 7600"
+        class="path-base"
+        fill="none"
+      />
+      <path
+        id="pathGlow"
+        d="M500 0
+           C480 800, 520 1200, 500 1600
+           C480 2400, 520 2800, 500 3200
+           C480 4000, 520 4400, 500 4800
+           C480 5600, 520 6000, 500 6400
+           C480 7000, 520 7300, 500 7600"
+        class="path-glow"
+        fill="none"
+      />
+    </svg>
+
+    <!-- PHASES -->
+
+    <!-- 0–1 -->
+    <article class="phase left" data-phase data-buffer="0.18" style="--top: 600px;">
+      <span class="phase-tag">Years 0–1</span>
+      <h2>Signal integrity</h2>
+      <p class="phase-lede">
+        Build and validate the identity engine. Signal must remain stable across
+        time, context, and real-world use.
       </p>
-    </header>
+      <ul class="phase-list">
+        <li><strong>Algorithm v1:</strong> multi-framework synthesis</li>
+        <li><strong>Validation:</strong> test–retest + calibration</li>
+        <li><strong>App:</strong> discovery → profile → inquiry</li>
+        <li><strong>Ethics:</strong> no ranking, no nudges</li>
+      </ul>
+      <div class="proof-gate">Signal holds under repetition.</div>
+    </article>
 
-    <!-- ROADMAP FIELD -->
-    <section class="roadmap-field">
-
-      <!-- PATH -->
-      <svg
-        class="road-path"
-        viewBox="0 0 1000 1200"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M500 0
-             C480 200, 520 300, 500 420
-             C480 560, 520 660, 500 780
-             C480 940, 520 1040, 500 1200"
-          fill="none"
-          stroke="rgba(120,170,255,0.35)"
-          stroke-width="2"
-          stroke-dasharray="6 10"
-        />
-      </svg>
-
-      <!-- PHASE 1 -->
-      <article class="phase phase-1">
-        <span class="phase-tag">Phase 1</span>
-        <h2>Signal integrity</h2>
-        <p>
-          Prove identity stability before expansion.
-          Signal must hold across repetition and context.
-        </p>
-        <ul>
-          <li>Identity discovery experience</li>
-          <li>Core code stability</li>
-          <li>Early aligned experiences</li>
-        </ul>
-      </article>
-
-      <!-- PHASE 2 -->
-      <article class="phase phase-2">
-        <span class="phase-tag">Phase 2</span>
-        <h2>Domain expansion</h2>
-        <p>
-          Extend ETHOS across life domains
-          without diluting signal quality.
-        </p>
-        <ul>
-          <li>People & social alignment</li>
-          <li>Work & collaboration</li>
-          <li>Places & environments</li>
-        </ul>
-      </article>
-
-      <!-- PHASE 3 -->
-      <article class="phase phase-3">
-        <span class="phase-tag">Phase 3</span>
-        <h2>Infrastructure</h2>
-        <p>
-          Establish ETHOS as a persistent
-          identity layer across decisions.
-        </p>
-        <ul>
-          <li>Cross-platform identity layer</li>
-          <li>Partner integrations</li>
-          <li>Long-term signal compounding</li>
-        </ul>
-      </article>
-
-    </section>
-
-    <!-- CLOSE -->
-    <footer class="roadmap-close">
-      <p>
-        ETHOS does not chase growth.<br />
-        It earns it by preserving clarity.
+    <!-- 1–2 -->
+    <article class="phase right" data-phase data-buffer="0.18" style="--top: 1800px;">
+      <span class="phase-tag">Years 1–2</span>
+      <h2>Marketplace wedge</h2>
+      <p class="phase-lede">
+        Experiences validate alignment faster than content.
+        Truth emerges through outcomes.
       </p>
-    </footer>
+      <ul class="phase-list">
+        <li><strong>Inquiry-first:</strong> no pressure</li>
+        <li><strong>Business intel v1:</strong> aligned demand</li>
+        <li><strong>Signal density:</strong> city-level fit</li>
+        <li><strong>Language guardrails:</strong> anti-manipulation</li>
+      </ul>
+      <div class="proof-gate">Users return unaided.</div>
+    </article>
+
+    <!-- 2–3 -->
+    <article class="phase left" data-phase data-buffer="0.20" style="--top: 3000px;">
+      <span class="phase-tag">Years 2–3</span>
+      <h2>City compounding</h2>
+      <p class="phase-lede">
+        Each city is an independent ecosystem tuned for density
+        without degrading clarity.
+      </p>
+      <ul class="phase-list">
+        <li><strong>City playbook:</strong> repeatable launches</li>
+        <li><strong>Temporal modeling:</strong> rhythm over rank</li>
+        <li><strong>Environment sensitivity:</strong> pace & noise</li>
+        <li><strong>Retention:</strong> direction, not addiction</li>
+      </ul>
+      <div class="proof-gate">Density without distortion.</div>
+    </article>
+
+    <!-- 3–4 -->
+    <article class="phase right" data-phase data-buffer="0.22" style="--top: 4300px;">
+      <span class="phase-tag">Years 3–4</span>
+      <h2>Data infrastructure</h2>
+      <p class="phase-lede">
+        ETHOS hardens into a longitudinal identity system.
+        Signal persists safely across life phases.
+      </p>
+      <ul class="phase-list">
+        <li><strong>Long-term storage:</strong> identity over time</li>
+        <li><strong>Context graph:</strong> environment × timing</li>
+        <li><strong>Privacy:</strong> minimization & isolation</li>
+        <li><strong>Governance:</strong> auditability</li>
+      </ul>
+      <div class="proof-gate">Signal persists without decay.</div>
+    </article>
+
+    <!-- 4–5 -->
+    <article class="phase left" data-phase data-buffer="0.24" style="--top: 5600px;">
+      <span class="phase-tag">Years 4–5</span>
+      <h2>Machine intelligence layer</h2>
+      <p class="phase-lede">
+        Machine learning enhances insight without turning people
+        into targets.
+      </p>
+      <ul class="phase-list">
+        <li><strong>Pattern inference:</strong> traits vs transitions</li>
+        <li><strong>Confidence modeling:</strong> uncertainty-aware</li>
+        <li><strong>Drift detection:</strong> bias monitoring</li>
+        <li><strong>Human-in-loop:</strong> explainability first</li>
+      </ul>
+      <div class="proof-gate">Accuracy improves ethically.</div>
+    </article>
+
+    <!-- HORIZON -->
+    <article class="horizon" data-horizon style="--top: 6900px;">
+      <span class="phase-tag">10-year horizon</span>
+      <h2>Directional infrastructure</h2>
+      <p>
+        ETHOS becomes a persistent compass beneath decisions —
+        invisible, trusted, and embedded.
+      </p>
+      <div class="horizon-grid">
+        <div class="horizon-card">
+          <h3>Identity portability</h3>
+          <p>Direction persists across contexts.</p>
+        </div>
+        <div class="horizon-card">
+          <h3>Institutional integration</h3>
+          <p>Adopted for long-term coherence.</p>
+        </div>
+        <div class="horizon-card">
+          <h3>Ethical intelligence</h3>
+          <p>No ads. No extraction. Ever.</p>
+        </div>
+      </div>
+    </article>
 
   </section>
-</BaseLayout>
+
+  <footer class="roadmap-close">
+    <p>ETHOS compounds by protecting signal integrity.</p>
+  </footer>
+
+</section>
+
+<script is:inline>
+(() => {
+  const field = document.getElementById("roadmapField");
+  const glow = document.getElementById("pathGlow");
+  const phases = [...field.querySelectorAll("[data-phase]")];
+  const horizon = field.querySelector("[data-horizon]");
+
+  const len = glow.getTotalLength();
+  glow.style.strokeDasharray = len;
+  glow.style.strokeDashoffset = len;
+
+  function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+
+  function tick(){
+    const rect = field.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const progress = clamp((vh*0.6 - rect.top) / rect.height, 0, 1);
+
+    glow.style.strokeDashoffset = len * (1 - progress);
+
+    phases.forEach(p=>{
+      const top = p.offsetTop / field.offsetHeight;
+      const buffer = parseFloat(p.dataset.buffer || "0.15");
+      const active = progress > top - buffer && progress < top + buffer*2;
+      p.classList.toggle("active", active);
+    });
+
+    if(horizon){
+      const hTop = horizon.offsetTop / field.offsetHeight;
+      horizon.classList.toggle("active", progress > hTop - 0.25);
+    }
+  }
+
+  window.addEventListener("scroll", tick, { passive:true });
+  window.addEventListener("resize", tick);
+  tick();
+})();
+</script>
 
 <style>
-/* ROOT */
-.roadmap-root {
-  padding: 6rem 1.5rem 10rem;
-}
+.roadmap-root{padding:6rem 1.5rem 20rem;}
+.roadmap-field{position:relative;max-width:1200px;margin:0 auto;min-height:7600px;}
 
-/* INTRO */
-.roadmap-intro {
-  max-width: 760px;
-  margin: 0 auto 8rem;
-  text-align: center;
+.phase{
+  position:absolute;
+  width:min(620px,48vw);
+  padding:3rem;
+  border-radius:36px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(120,170,255,.25);
+  backdrop-filter:blur(20px);
+  opacity:0;
+  transform:translateY(220px);
+  transition:opacity 1.3s ease,transform 1.3s ease;
+  z-index:3;
 }
-.roadmap-intro h1 {
-  font-size: 3.2rem;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.2rem;
-}
-.roadmap-intro p {
-  color: rgba(255,255,255,0.7);
-  font-size: 1.1rem;
-}
+.phase.active{opacity:1;transform:none;}
+.phase.left{left:0;}
+.phase.right{right:0;}
 
-/* FIELD */
-.roadmap-field {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto 8rem;
-  min-height: 1200px;
+.horizon{
+  position:absolute;
+  left:0;right:0;
+  max-width:1200px;
+  margin:auto;
+  padding:4rem;
+  border-radius:44px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(120,170,255,.22);
+  opacity:0;
+  transform:translateY(260px);
+  transition:opacity 1.5s ease,transform 1.5s ease;
+  z-index:1;
 }
+.horizon.active{opacity:1;transform:none;}
 
-/* PATH */
-.road-path {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.6;
-}
-
-/* PHASES */
-.phase {
-  position: relative;
-  max-width: 420px;
-  margin-bottom: 14rem;
-  padding: 2rem 2.2rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(120,170,255,0.22);
-  border-radius: 24px;
-  backdrop-filter: blur(16px);
-  z-index: 1;
-  animation: rise 1s ease forwards;
-}
-
-.phase-1 {
-  margin-left: 0;
-}
-.phase-2 {
-  margin-left: auto;
-}
-.phase-3 {
-  margin-left: 0;
-}
-
-.phase-tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(120,170,255,0.8);
-  margin-bottom: 0.6rem;
-}
-
-.phase h2 {
-  font-size: 1.6rem;
-  margin-bottom: 0.75rem;
-}
-
-.phase p {
-  color: rgba(255,255,255,0.75);
-  margin-bottom: 1.2rem;
-}
-
-.phase ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.phase li {
-  position: relative;
-  padding-left: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: rgba(255,255,255,0.7);
-}
-
-.phase li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: rgba(120,170,255,0.7);
-}
-
-/* ANIMATION */
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(80px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* CLOSE */
-.roadmap-close {
-  max-width: 560px;
-  margin: 0 auto;
-  text-align: center;
-  color: rgba(255,255,255,0.7);
+@media(max-width:1000px){
+  .phase{width:92vw;left:0!important;right:0!important;}
+  .horizon-grid{grid-template-columns:1fr;}
 }
 </style>
+</BaseLayout>
