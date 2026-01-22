@@ -4,153 +4,1100 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout>
   <section class="about-root">
+    <!-- BACKDROP -->
+    <div class="about-backdrop" aria-hidden="true">
+      <div class="orb o1"></div>
+      <div class="orb o2"></div>
+      <div class="orb o3"></div>
+      <div class="grid"></div>
+      <div class="vignette"></div>
+      <div class="pointer" id="pointerGlow"></div>
+    </div>
 
-    <!-- OPENING STATEMENT -->
-    <section class="about-opening">
-      <h1>Why ETHOS exists</h1>
-      <p class="lead">
+    <!-- HERO -->
+    <header class="about-hero">
+      <div class="hero-top" data-reveal>
+        <span class="badge">ABOUT ETHOS</span>
+        <span class="rule"></span>
+        <span class="meta">Identity-first • Proof-gated • Anti-extraction</span>
+      </div>
+
+      <h1 class="hero-title" data-reveal>
+        Why ETHOS exists
+      </h1>
+
+      <p class="hero-lede" data-reveal>
         Modern systems help people choose faster.<br />
         They rarely help people choose better.
       </p>
+
+      <div class="hero-actions" data-reveal>
+        <a class="btn primary" href="/discovery">Start discovery</a>
+        <a class="btn" href="/deck">View investor deck</a>
+      </div>
+
+      <div class="hero-sub" data-reveal>
+        <div class="hero-chip">
+          <span class="dot"></span>
+          <span>ETHOS is built to preserve signal integrity as it scales.</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- THESIS -->
+    <section class="about-section">
+      <div class="section-head" data-reveal>
+        <h2>The thesis</h2>
+        <p>
+          When choice expands faster than clarity, people don’t become free — they become fragmented.
+        </p>
+      </div>
+
+      <div class="thesis-field" id="thesisField">
+        <svg class="thesis-svg" viewBox="0 0 1000 680" preserveAspectRatio="none" aria-hidden="true">
+          <path
+            id="thesisBase"
+            d="M120 110 C310 40, 420 90, 500 160
+               C620 270, 710 250, 880 330
+               C760 420, 640 410, 520 480
+               C380 560, 260 560, 120 610"
+            class="thesis-base"
+            fill="none"
+          />
+          <path
+            id="thesisGlow"
+            d="M120 110 C310 40, 420 90, 500 160
+               C620 270, 710 250, 880 330
+               C760 420, 640 410, 520 480
+               C380 560, 260 560, 120 610"
+            class="thesis-glow"
+            fill="none"
+          />
+        </svg>
+
+        <article class="thought t1" data-reveal data-node="140 120">
+          <span class="kicker">01</span>
+          <h3>Choice without clarity</h3>
+          <p>Choice expands faster than people can interpret themselves.</p>
+        </article>
+
+        <article class="thought t2" data-reveal data-node="850 320">
+          <span class="kicker">02</span>
+          <h3>Noise fragments identity</h3>
+          <p>When everything is possible, identity becomes unstable and performative.</p>
+        </article>
+
+        <article class="thought t3" data-reveal data-node="520 510">
+          <span class="kicker">03</span>
+          <h3>Misalignment becomes default</h3>
+          <p>
+            Fragmented identity leads to misalignment — in work, relationships,
+            environments, and life direction.
+          </p>
+        </article>
+
+        <article class="thought t4" data-reveal data-node="150 610">
+          <span class="kicker">04</span>
+          <h3>Systems optimize the wrong thing</h3>
+          <p>Engagement loops reward attention, not fit. ETHOS refuses that incentive.</p>
+        </article>
+
+        <svg class="node-svg" viewBox="0 0 1000 680" preserveAspectRatio="none" aria-hidden="true">
+          <g id="thesisNodes"></g>
+        </svg>
+      </div>
     </section>
 
-    <!-- PHILOSOPHY FIELD -->
-    <section class="about-field">
-      <div class="thought t1">
+    <!-- CORE -->
+    <section class="about-section">
+      <div class="section-head" data-reveal>
+        <h2>What ETHOS is</h2>
         <p>
-          Choice without clarity creates noise.
+          ETHOS is not a content platform. It is a decision-intelligence layer that preserves signal,
+          reduces noise, and increases alignment.
         </p>
       </div>
 
-      <div class="thought t2">
-        <p>
-          Noise fragments identity.
-        </p>
-      </div>
+      <div class="bento">
+        <article class="card wide" data-reveal>
+          <div class="card-head">
+            <span class="pill">SYSTEM</span>
+            <h3>Identity before algorithms</h3>
+          </div>
+          <p class="muted">
+            ETHOS builds a stable identity signal first, then uses that signal to power discovery,
+            social fit, and marketplace alignment — without ranking people or harvesting attention.
+          </p>
 
-      <div class="thought t3">
-        <p>
-          Fragmented identity leads to misalignment —
-          in work, relationships, environments, and life direction.
-        </p>
+          <div class="diagram">
+            <div class="diag-row">
+              <span class="d">Identity signal</span>
+              <span class="arrow">→</span>
+              <span class="d">Context engine</span>
+              <span class="arrow">→</span>
+              <span class="d">Aligned surfaces</span>
+            </div>
+            <div class="diag-sub">
+              discovery • people • places • experiences • work environments
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card-head">
+            <span class="pill">DESIGN</span>
+            <h3>Anti-extraction by default</h3>
+          </div>
+          <ul class="list">
+            <li>No attention harvesting</li>
+            <li>No ranking identity</li>
+            <li>No urgency mechanics</li>
+            <li>No ad incentives early</li>
+          </ul>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card-head">
+            <span class="pill">VALUE</span>
+            <h3>Clarity compounds</h3>
+          </div>
+          <p class="muted">
+            As signal becomes more stable across time and context,
+            ETHOS becomes more useful — without becoming more manipulative.
+          </p>
+          <div class="mini-metrics">
+            <div class="mini">
+              <span class="mini-k">Signal</span>
+              <span class="mini-v">↑ stability</span>
+            </div>
+            <div class="mini">
+              <span class="mini-k">Noise</span>
+              <span class="mini-v">↓ friction</span>
+            </div>
+            <div class="mini">
+              <span class="mini-k">Fit</span>
+              <span class="mini-v">↑ decisions</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card-head">
+            <span class="pill">WEDGE</span>
+            <h3>Experiences produce proof</h3>
+          </div>
+          <p class="muted">
+            Experiences validate alignment faster than content.
+            ETHOS uses the marketplace as an evidence loop — not a growth hack.
+          </p>
+          <div class="callout">
+            Proof-gated expansion, city by city.
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- CORE BELIEF -->
-    <section class="about-core">
-      <p>
-        ETHOS exists to reverse this.
-      </p>
+    <!-- PRINCIPLES -->
+    <section class="about-section">
+      <div class="section-head" data-reveal>
+        <h2>Non-negotiables</h2>
+        <p>These are constraints — not slogans. They keep ETHOS durable.</p>
+      </div>
 
-      <p>
-        By placing identity before algorithms,
-        structure before scale,
-        and alignment before engagement.
-      </p>
+      <div class="principles">
+        <article class="p" data-reveal>
+          <h3>Signal integrity</h3>
+          <p>We protect identity signal from distortion as density increases.</p>
+        </article>
+        <article class="p" data-reveal>
+          <h3>No identity ranking</h3>
+          <p>ETHOS never turns personality into a leaderboard or social currency.</p>
+        </article>
+        <article class="p" data-reveal>
+          <h3>Proof before scale</h3>
+          <p>Expansion is gated by stability, retention, and measurable clarity.</p>
+        </article>
+        <article class="p" data-reveal>
+          <h3>Privacy-first</h3>
+          <p>Minimization, safe defaults, and permissioned portability.</p>
+        </article>
+        <article class="p" data-reveal>
+          <h3>Anti-urgency UX</h3>
+          <p>No scarcity, no streaks, no coercive loops. Calm by design.</p>
+        </article>
+        <article class="p" data-reveal>
+          <h3>Explainability</h3>
+          <p>Outputs must be interpretable — direction, not black-box verdicts.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW WE PROVE -->
+    <section class="about-section">
+      <div class="section-head" data-reveal>
+        <h2>How ETHOS earns trust</h2>
+        <p>
+          Professionals don’t fund narratives — they fund systems that can prove integrity and scale.
+        </p>
+      </div>
+
+      <div class="proof-grid">
+        <article class="proof" data-reveal>
+          <span class="proof-tag">VALIDATION</span>
+          <h3>Stability over time</h3>
+          <p class="muted">
+            Test–retest reliability + confidence calibration.
+            We measure stability across repetition and context changes.
+          </p>
+          <div class="proof-line">
+            <span class="k">Target</span>
+            <span class="v">repeatable signal</span>
+          </div>
+        </article>
+
+        <article class="proof" data-reveal>
+          <span class="proof-tag">DENSITY</span>
+          <h3>Clarity at scale</h3>
+          <p class="muted">
+            Density must increase without ranking, manipulation, or signal collapse.
+            City rollout is designed as independent ecosystems.
+          </p>
+          <div class="proof-line">
+            <span class="k">Target</span>
+            <span class="v">no distortion</span>
+          </div>
+        </article>
+
+        <article class="proof" data-reveal>
+          <span class="proof-tag">GOVERNANCE</span>
+          <h3>Ethical intelligence</h3>
+          <p class="muted">
+            Drift monitoring, bias checks, auditability.
+            If ML improves performance but harms ethics, it fails.
+          </p>
+          <div class="proof-line">
+            <span class="k">Target</span>
+            <span class="v">trust preserved</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="proof-banner" data-reveal>
+        <div class="pb-left">
+          <h3>ETHOS exists to reverse misalignment.</h3>
+          <p>
+            By placing identity before algorithms,
+            structure before scale,
+            and alignment before engagement.
+          </p>
+        </div>
+        <div class="pb-right">
+          <div class="pb-chip">Proof-gated roadmap</div>
+          <div class="pb-chip">Business intelligence wedge</div>
+          <div class="pb-chip">City compounding model</div>
+          <div class="pb-chip">Anti-extraction UX</div>
+        </div>
+      </div>
     </section>
 
     <!-- CLOSING -->
-    <section class="about-close">
+    <section class="about-close" data-reveal>
+      <h2>What this becomes</h2>
       <p>
         ETHOS is not a platform.<br />
         It is an identity system for navigating a complex world.
       </p>
+      <div class="close-actions">
+        <a class="btn primary" href="/roadmap">See the roadmap</a>
+        <a class="btn" href="/financials">View financial model</a>
+      </div>
     </section>
-
   </section>
+
+  <script is:inline>
+    (() => {
+      // reveal
+      const els = Array.from(document.querySelectorAll("[data-reveal]"));
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) e.target.classList.add("is-in");
+          }
+        },
+        { threshold: 0.18, rootMargin: "0px 0px -10% 0px" }
+      );
+      els.forEach((el) => io.observe(el));
+
+      // pointer glow
+      const glow = document.getElementById("pointerGlow");
+      let gx = 0, gy = 0, tx = 0, ty = 0, raf = 0;
+
+      function tick() {
+        raf = 0;
+        gx += (tx - gx) * 0.12;
+        gy += (ty - gy) * 0.12;
+        glow.style.transform = `translate(${gx}px, ${gy}px) translate(-50%, -50%)`;
+      }
+
+      window.addEventListener("pointermove", (e) => {
+        const r = document.documentElement.getBoundingClientRect();
+        tx = e.clientX - r.left;
+        ty = e.clientY - r.top;
+        if (!raf) raf = requestAnimationFrame(tick);
+      }, { passive: true });
+
+      // thesis nodes
+      const nodesG = document.getElementById("thesisNodes");
+      const field = document.getElementById("thesisField");
+      if (nodesG && field) {
+        const svg = field.querySelector(".node-svg");
+        const cards = Array.from(field.querySelectorAll("[data-node]"));
+        const clamp = (n,a,b)=>Math.max(a,Math.min(b,n));
+
+        function clear(n){ while(n.firstChild) n.removeChild(n.firstChild); }
+        function el(tag, attrs = {}) {
+          const n = document.createElementNS("http://www.w3.org/2000/svg", tag);
+          Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, String(v)));
+          return n;
+        }
+
+        function build() {
+          clear(nodesG);
+          const pts = cards.map((c) => {
+            const [x,y] = (c.getAttribute("data-node") || "0 0").split(" ").map(Number);
+            return { x, y };
+          });
+
+          // connectors between nodes (soft)
+          for (let i = 0; i < pts.length - 1; i++) {
+            const a = pts[i], b = pts[i+1];
+            nodesG.appendChild(el("path", {
+              d: `M ${a.x} ${a.y} C ${(a.x+b.x)/2} ${a.y-26}, ${(a.x+b.x)/2} ${b.y+26}, ${b.x} ${b.y}`,
+              class: "node-conn"
+            }));
+          }
+
+          // nodes
+          pts.forEach((p) => {
+            nodesG.appendChild(el("circle", { cx: p.x, cy: p.y, r: 13, class: "node-ring" }));
+            nodesG.appendChild(el("circle", { cx: p.x, cy: p.y, r: 4.8, class: "node-dot" }));
+          });
+
+          // animate glow stroke length once visible
+          const glowPath = document.getElementById("thesisGlow");
+          if (glowPath) {
+            const len = glowPath.getTotalLength();
+            glowPath.style.strokeDasharray = String(len);
+            glowPath.style.strokeDashoffset = String(len);
+            requestAnimationFrame(() => {
+              glowPath.classList.add("draw");
+              glowPath.style.strokeDashoffset = "0";
+            });
+          }
+        }
+
+        build();
+        new ResizeObserver(build).observe(field);
+      }
+    })();
+  </script>
+
+  <style>
+    /* ROOT */
+    .about-root {
+      position: relative;
+      padding: 7.5rem 1.5rem 12rem;
+      overflow: clip;
+    }
+
+    /* BACKDROP */
+    .about-backdrop {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .orb {
+      position: absolute;
+      width: 760px;
+      height: 760px;
+      border-radius: 999px;
+      filter: blur(80px);
+      opacity: 0.18;
+      transform: translate3d(0,0,0);
+      animation: float 18s ease-in-out infinite alternate;
+    }
+    .o1 { left: -240px; top: -280px; background: radial-gradient(circle at 35% 35%, rgba(120,170,255,0.85), transparent 60%); }
+    .o2 { right: -260px; top: 240px; background: radial-gradient(circle at 55% 45%, rgba(120,255,210,0.70), transparent 60%); animation-delay: 3s; }
+    .o3 { left: 10%; bottom: -420px; background: radial-gradient(circle at 55% 45%, rgba(190,140,255,0.75), transparent 60%); animation-delay: 6s; }
+
+    .grid {
+      position: absolute;
+      inset: -2px;
+      opacity: 0.08;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(circle at 50% 25%, rgba(0,0,0,0.9), rgba(0,0,0,0.05) 70%);
+    }
+
+    .vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 20%, rgba(0,0,0,0.0), rgba(0,0,0,0.55) 72%, rgba(0,0,0,0.78) 100%);
+    }
+
+    .pointer {
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 50% 50%, rgba(120,170,255,0.20), rgba(120,170,255,0.06), transparent 62%);
+      filter: blur(18px);
+      opacity: 0.75;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: screen;
+    }
+
+    @keyframes float {
+      from { transform: translateY(-14px) translateX(-10px) scale(1); }
+      to { transform: translateY(14px) translateX(10px) scale(1.02); }
+    }
+
+    /* HERO */
+    .about-hero {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+      margin: 0 auto 7.5rem;
+      text-align: center;
+    }
+
+    .hero-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1.7rem;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 800ms ease, transform 800ms ease;
+    }
+
+    .badge {
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(120,170,255,0.85);
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(120,170,255,0.20);
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(14px);
+    }
+
+    .rule {
+      width: 60px;
+      height: 1px;
+      background: rgba(255,255,255,0.14);
+    }
+
+    .meta {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.62);
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 4vw, 3.6rem);
+      letter-spacing: -0.035em;
+      margin: 0 0 1.2rem;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 900ms ease, transform 900ms ease;
+    }
+
+    .hero-lede {
+      font-size: 1.15rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.76);
+      margin: 0 auto 2.2rem;
+      max-width: 58ch;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 900ms ease, transform 900ms ease;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 900ms ease, transform 900ms ease;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.15rem;
+      border-radius: 14px;
+      border: 1px solid rgba(120,170,255,0.22);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      backdrop-filter: blur(16px);
+      transition: transform 180ms ease, border-color 220ms ease, background 220ms ease;
+      min-width: 170px;
+    }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(120,170,255,0.42); background: rgba(255,255,255,0.06); }
+    .btn.primary {
+      border-color: rgba(120,170,255,0.46);
+      background: linear-gradient(180deg, rgba(120,170,255,0.14), rgba(255,255,255,0.04));
+      box-shadow: 0 0 0 1px rgba(120,170,255,0.12), 0 18px 60px rgba(0,0,0,0.55);
+    }
+
+    .hero-sub {
+      margin-top: 2.2rem;
+      display: flex;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 900ms ease, transform 900ms ease;
+    }
+
+    .hero-chip {
+      display: inline-flex;
+      gap: 0.65rem;
+      align-items: center;
+      padding: 0.85rem 1.05rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(0,0,0,0.18);
+      color: rgba(255,255,255,0.68);
+      backdrop-filter: blur(16px);
+      max-width: 760px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(120,170,255,0.95);
+      box-shadow: 0 0 18px rgba(120,170,255,0.9);
+    }
+
+    /* SECTIONS */
+    .about-section {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 0 auto 6.5rem;
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin: 0 auto 2.4rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 850ms ease, transform 850ms ease;
+    }
+
+    .section-head h2 {
+      font-size: 2.0rem;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.8rem;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+    }
+
+    /* THESIS FIELD */
+    .thesis-field {
+      position: relative;
+      height: 720px;
+      border-radius: 34px;
+      border: 1px solid rgba(120,170,255,0.14);
+      background: rgba(255,255,255,0.02);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 70px rgba(0,0,0,0.55);
+    }
+
+    .thesis-svg,
+    .node-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.95;
+    }
+
+    .thesis-base {
+      stroke: rgba(120,170,255,0.18);
+      stroke-width: 2;
+      stroke-dasharray: 6 10;
+      opacity: 0.75;
+    }
+
+    .thesis-glow {
+      stroke: rgba(120,170,255,0.92);
+      stroke-width: 3;
+      filter: drop-shadow(0 0 18px rgba(120,170,255,0.9));
+      opacity: 0.0;
+      transition: opacity 600ms ease;
+    }
+    .thesis-glow.draw {
+      opacity: 0.9;
+      transition: opacity 600ms ease;
+      transition-delay: 80ms;
+      transition-property: opacity;
+    }
+    .thesis-glow.draw {
+      transition: opacity 600ms ease, stroke-dashoffset 1400ms ease;
+    }
+
+    .node-conn {
+      fill: none;
+      stroke: rgba(120,170,255,0.20);
+      stroke-width: 2;
+      filter: drop-shadow(0 0 10px rgba(120,170,255,0.25));
+      opacity: 0.85;
+    }
+
+    .node-ring {
+      fill: rgba(120,170,255,0.06);
+      stroke: rgba(120,170,255,0.32);
+      stroke-width: 1;
+      filter: drop-shadow(0 0 16px rgba(120,170,255,0.40));
+      opacity: 0.95;
+    }
+
+    .node-dot {
+      fill: rgba(255,255,255,0.86);
+      filter: drop-shadow(0 0 10px rgba(120,170,255,0.65));
+      opacity: 0.95;
+    }
+
+    .thought {
+      position: absolute;
+      z-index: 1;
+      width: min(390px, 42vw);
+      padding: 1.7rem 2.0rem;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(120,170,255,0.18);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.55);
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 900ms ease, transform 900ms ease, border-color 700ms ease;
+    }
+    .thought.is-in {
+      opacity: 1;
+      transform: translateY(0);
+      border-color: rgba(120,170,255,0.32);
+    }
+
+    .thought h3 {
+      margin: 0.2rem 0 0.6rem;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .thought p {
+      margin: 0;
+      color: rgba(255,255,255,0.74);
+      line-height: 1.6;
+    }
+
+    .kicker {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(120,170,255,0.85);
+    }
+
+    .t1 { left: 56px; top: 74px; }
+    .t2 { right: 56px; top: 220px; }
+    .t3 { left: 50%; top: 392px; transform: translateX(-50%) translateY(22px); width: min(460px, 58vw); }
+    .t3.is-in { transform: translateX(-50%) translateY(0); }
+    .t4 { left: 56px; bottom: 56px; }
+
+    /* BENTO */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      grid-column: span 6;
+      padding: 1.8rem 2.0rem;
+      border-radius: 28px;
+      border: 1px solid rgba(120,170,255,0.16);
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 70px rgba(0,0,0,0.55);
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 850ms ease, transform 850ms ease, border-color 700ms ease;
+    }
+    .card.wide { grid-column: span 12; }
+    .card.is-in {
+      opacity: 1;
+      transform: translateY(0);
+      border-color: rgba(120,170,255,0.30);
+    }
+
+    .card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(120,170,255,0.18);
+      background: rgba(255,255,255,0.03);
+      color: rgba(120,170,255,0.85);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      letter-spacing: -0.015em;
+    }
+
+    .muted {
+      margin: 0;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.7;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+      display: grid;
+      gap: 0.6rem;
+      color: rgba(255,255,255,0.74);
+    }
+    .list li {
+      position: relative;
+      padding-left: 1.05rem;
+    }
+    .list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: rgba(120,170,255,0.85);
+    }
+
+    .diagram {
+      margin-top: 1.25rem;
+      padding: 1.25rem 1.4rem;
+      border-radius: 20px;
+      border: 1px solid rgba(120,170,255,0.14);
+      background: rgba(0,0,0,0.18);
+    }
+    .diag-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      text-align: center;
+    }
+    .d {
+      padding: 0.45rem 0.65rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.92rem;
+    }
+    .arrow {
+      color: rgba(120,170,255,0.85);
+      opacity: 0.9;
+    }
+    .diag-sub {
+      margin-top: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.9rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .mini-metrics {
+      margin-top: 1.15rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+    .mini {
+      padding: 0.9rem 1rem;
+      border-radius: 18px;
+      border: 1px solid rgba(120,170,255,0.14);
+      background: rgba(255,255,255,0.02);
+    }
+    .mini-k {
+      display: block;
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.50);
+      margin-bottom: 0.25rem;
+    }
+    .mini-v {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.95rem;
+    }
+
+    .callout {
+      margin-top: 1.15rem;
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.18);
+      color: rgba(255,255,255,0.72);
+    }
+
+    /* PRINCIPLES */
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .p {
+      padding: 1.55rem 1.7rem;
+      border-radius: 26px;
+      border: 1px solid rgba(120,170,255,0.14);
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 70px rgba(0,0,0,0.55);
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 850ms ease, transform 850ms ease, border-color 700ms ease;
+    }
+    .p.is-in {
+      opacity: 1;
+      transform: translateY(0);
+      border-color: rgba(120,170,255,0.28);
+    }
+    .p h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.08rem;
+      letter-spacing: -0.01em;
+    }
+    .p p {
+      margin: 0;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.65;
+    }
+
+    /* PROOF GRID */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.2rem;
+    }
+
+    .proof {
+      padding: 1.7rem 1.85rem;
+      border-radius: 28px;
+      border: 1px solid rgba(120,170,255,0.16);
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 70px rgba(0,0,0,0.55);
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 850ms ease, transform 850ms ease, border-color 700ms ease;
+    }
+    .proof.is-in {
+      opacity: 1;
+      transform: translateY(0);
+      border-color: rgba(120,170,255,0.30);
+    }
+
+    .proof-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(120,170,255,0.85);
+      margin-bottom: 0.75rem;
+    }
+    .proof h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+    }
+
+    .proof-line {
+      margin-top: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.72);
+      font-size: 0.95rem;
+    }
+    .proof-line .k {
+      color: rgba(255,255,255,0.52);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+    }
+    .proof-line .v {
+      color: rgba(255,255,255,0.82);
+    }
+
+    .proof-banner {
+      margin-top: 1.5rem;
+      padding: 2.0rem 2.2rem;
+      border-radius: 32px;
+      border: 1px solid rgba(120,170,255,0.16);
+      background: linear-gradient(180deg, rgba(120,170,255,0.07), rgba(255,255,255,0.03));
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 70px rgba(0,0,0,0.55);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.5rem;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 900ms ease, transform 900ms ease, border-color 700ms ease;
+    }
+    .proof-banner.is-in {
+      opacity: 1;
+      transform: translateY(0);
+      border-color: rgba(120,170,255,0.30);
+    }
+    .pb-left h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.25rem;
+      letter-spacing: -0.015em;
+    }
+    .pb-left p {
+      margin: 0;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+      max-width: 62ch;
+    }
+    .pb-right {
+      display: grid;
+      gap: 0.7rem;
+      align-content: start;
+    }
+    .pb-chip {
+      padding: 0.85rem 1.0rem;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.18);
+      color: rgba(255,255,255,0.72);
+    }
+
+    /* CLOSE */
+    .about-close {
+      position: relative;
+      z-index: 1;
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 3.2rem 2.3rem;
+      border-radius: 36px;
+      border: 1px solid rgba(120,170,255,0.16);
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 80px rgba(0,0,0,0.6);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 900ms ease, transform 900ms ease, border-color 700ms ease;
+    }
+    .about-close.is-in {
+      opacity: 1;
+      transform: translateY(0);
+      border-color: rgba(120,170,255,0.30);
+    }
+    .about-close h2 {
+      margin: 0 0 0.9rem;
+      font-size: 2.0rem;
+      letter-spacing: -0.02em;
+    }
+    .about-close p {
+      margin: 0 auto 1.9rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+      max-width: 70ch;
+    }
+    .close-actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    /* REVEAL */
+    [data-reveal].is-in { opacity: 1; transform: translateY(0); }
+
+    /* make hero reveal compatible */
+    .hero-top.is-in,
+    .hero-title.is-in,
+    .hero-lede.is-in,
+    .hero-actions.is-in,
+    .hero-sub.is-in,
+    .section-head.is-in,
+    .card.is-in,
+    .p.is-in,
+    .proof.is-in,
+    .proof-banner.is-in,
+    .about-close.is-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 980px) {
+      .thesis-field { height: 860px; }
+      .thought { width: 86vw; left: 50% !important; right: auto !important; transform: translateX(-50%) translateY(22px); }
+      .thought.is-in { transform: translateX(-50%) translateY(0); }
+      .t1 { top: 52px; }
+      .t2 { top: 250px; }
+      .t3 { top: 470px; width: 86vw; }
+      .t4 { top: 700px; bottom: auto; }
+
+      .bento { grid-template-columns: 1fr; }
+      .card, .card.wide { grid-column: 1 / -1; }
+
+      .principles { grid-template-columns: 1fr; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .proof-banner { grid-template-columns: 1fr; }
+      .pointer { opacity: 0.55; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .orb, .pointer { animation: none !important; }
+      * { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
 </BaseLayout>
-
-<style>
-/* ROOT */
-.about-root {
-  padding: 8rem 1.5rem 10rem;
-}
-
-/* OPENING */
-.about-opening {
-  max-width: 760px;
-  margin: 0 auto 8rem;
-  text-align: center;
-}
-.about-opening h1 {
-  font-size: 3rem;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-}
-.about-opening .lead {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.75);
-}
-
-/* FIELD */
-.about-field {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto 8rem;
-  min-height: 420px;
-}
-.thought {
-  position: absolute;
-  max-width: 360px;
-  padding: 1.6rem 2rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(120,170,255,0.18);
-  border-radius: 24px;
-  backdrop-filter: blur(16px);
-  animation: drift 18s ease-in-out infinite alternate;
-}
-.thought p {
-  color: rgba(255,255,255,0.75);
-  line-height: 1.55;
-}
-
-.t1 {
-  top: 0;
-  left: 0;
-}
-.t2 {
-  top: 160px;
-  right: 0;
-  animation-delay: 3s;
-}
-.t3 {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  animation-delay: 6s;
-}
-
-@keyframes drift {
-  from {
-    transform: translateY(-6px);
-  }
-  to {
-    transform: translateY(6px);
-  }
-}
-
-/* CORE */
-.about-core {
-  max-width: 680px;
-  margin: 0 auto 6rem;
-  text-align: center;
-}
-.about-core p {
-  font-size: 1.1rem;
-  line-height: 1.65;
-  color: rgba(255,255,255,0.8);
-  margin-bottom: 1.5rem;
-}
-
-/* CLOSE */
-.about-close {
-  max-width: 560px;
-  margin: 0 auto;
-  text-align: center;
-}
-.about-close p {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.65);
-}
-</style>

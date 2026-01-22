@@ -1,259 +1,1434 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const slides = [
-  {
-    id: "intro",
-    title: "ETHOS",
-    content: () => `
-      <p>
-        ETHOS is a compass for modern life.
-        Not a feed. Not a recommender.
-      </p>
-    `
-  },
-  {
-    id: "problem",
-    title: "The problem",
-    content: () => `
-      <p>
-        People don’t lack options.
-        They lack direction.
-      </p>
-      <div class="compare">
-        <div>
-          <strong>Today</strong>
-          <p>Endless choice, low confidence, frequent resets.</p>
-        </div>
-        <div>
-          <strong>Result</strong>
-          <p>Burnout disguised as freedom.</p>
-        </div>
-      </div>
-    `
-  },
-  {
-    id: "gap",
-    title: "The gap",
-    content: () => `
-      <p>
-        Personalization predicts behavior.
-        It does not understand the person.
-      </p>
-      <p class="muted">
-        Engagement is not alignment.
-      </p>
-    `
-  },
-  {
-    id: "insight",
-    title: "The insight",
-    content: () => `
-      <p>
-        Precision beats personalization.
-      </p>
-      <p>
-        Identity must exist before decisions —
-        not after.
-      </p>
-    `
-  },
-  {
-    id: "system",
-    title: "The system",
-    content: () => `
-      <div class="diagram">
-        <span>Identity</span>
-        <span>→</span>
-        <span>Signal</span>
-        <span>→</span>
-        <span>Experience</span>
-      </div>
-      <p class="muted">
-        Direction compounds. Noise resets.
-      </p>
-    `
-  },
-  {
-    id: "wedge",
-    title: "Why experiences",
-    content: () => `
-      <p>
-        Experiences reveal identity faster than content.
-      </p>
-      <p>
-        ETHOS starts where intention meets reality.
-      </p>
-    `
-  },
-  {
-    id: "expansion",
-    title: "Platform expansion",
-    content: () => `
-      <p>
-        Once identity exists, expansion is inevitable —
-        not forced.
-      </p>
-      <ul>
-        <li>People</li>
-        <li>Places</li>
-        <li>Work</li>
-        <li>Wellness</li>
-        <li>Consumption</li>
-      </ul>
-    `
-  },
-  {
-    id: "business",
-    title: "Business model",
-    content: () => `
-      <p>
-        Businesses pay for aligned visibility.
-      </p>
-      <p>
-        Users never pay with attention.
-      </p>
-      <p class="muted">
-        Incentives stay clean.
-      </p>
-    `
-  },
-  {
-    id: "ask",
-    title: "The ask",
-    content: () => `
-      <p>
-        Pre-seed to prove signal density
-        and repeated use.
-      </p>
-      <p>
-        Build once. Compound forever.
-      </p>
-    `
-  }
-];
+const PRESEED = "$350,000";
+
+// Keep your exact JPG filenames in /public/deck
+const IMAGES = {
+  hero: "/deck/hero-orb.jpg",
+  map: "/deck/identity-map.jpg",
+  density: "/deck/city-density.jpg",
+  founder: "/deck/founder.jpg",
+};
 ---
 
 <BaseLayout>
-  <section id="deck">
-    <div id="indicator">01 / {String(slides.length).padStart(2, "0")}</div>
+  <section id="deck" class="deck" aria-label="ETHOS Pre-seed Deck">
+    <!-- Fixed HUD -->
+    <div class="hud">
+      <div class="hud-left">
+        <span class="hud-mark">ETHOS</span>
+        <span class="hud-dot"></span>
+        <span class="hud-sub">Pre-seed</span>
+      </div>
 
-    {slides.map((slide, i) => (
-      <section class="slide" id={`slide-${i}`}>
-        <h1>{slide.title}</h1>
-        <div class="content" set:html={slide.content()} />
+      <div class="hud-right">
+        <span id="hudIndex" class="hud-index">01</span>
+        <span class="hud-slash">/</span>
+        <span id="hudTotal" class="hud-total">13</span>
+      </div>
+    </div>
+
+    <!-- Cinematic background layers (global, not cards) -->
+    <div class="stage" aria-hidden="true">
+      <div class="vignette"></div>
+      <div class="grain"></div>
+
+      <!-- parallax orbs (global) -->
+      <div class="orb o1"></div>
+      <div class="orb o2"></div>
+      <div class="orb o3"></div>
+
+      <!-- hero texture image used as a faint layer -->
+      <div class="imgwash">
+        <img src={IMAGES.hero} alt="" />
+      </div>
+
+      <!-- subtle scanline -->
+      <div class="scanline"></div>
+    </div>
+
+    <!-- Slides: full-frame, no card UI -->
+    <div class="track" id="track">
+
+      <!-- 01 — HERO -->
+      <section class="slide s-hero" data-slide data-title="ETHOS">
+        <div class="content">
+          <div class="eyebrow">Identity before algorithms</div>
+          <h1 class="display">ETHOS</h1>
+          <p class="lede">
+            A directional intelligence system for modern life.<br />
+            Not a feed. Not a recommender. A compass.
+          </p>
+
+          <div class="hero-row">
+            <div class="hero-proof">
+              <div class="chip">Built already</div>
+              <div class="chip">Solo founder</div>
+              <div class="chip">Live product system</div>
+            </div>
+
+            <div class="hero-figure" aria-hidden="true">
+              <div class="frame">
+                <img src={IMAGES.hero} alt="" />
+              </div>
+              <div class="caption">A system designed for trust compounding.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottomline">
+          <span class="hint">Scroll</span>
+          <span class="dot"></span>
+          <span class="hint">Arrow keys</span>
+        </div>
       </section>
-    ))}
 
-    <button id="export">Export deck (PDF)</button>
+      <!-- 02 — THE SHIFT -->
+      <section class="slide" data-slide data-title="The shift">
+        <div class="content">
+          <div class="kicker">The shift</div>
+          <h2 class="title">
+            The last decade optimized for speed and choice.<br />
+            The next optimizes for clarity.
+          </h2>
+
+          <div class="split">
+            <p class="body">
+              People do not lack options. They lack direction.
+              Systems are accelerating choices without increasing confidence.
+            </p>
+
+            <div class="metrics">
+              <div class="metric">
+                <div class="m-top">
+                  <span class="m-num">∞</span>
+                  <span class="m-lab">Options</span>
+                </div>
+                <div class="m-bar"><span style="width: 92%"></span></div>
+              </div>
+
+              <div class="metric dim">
+                <div class="m-top">
+                  <span class="m-num">↓</span>
+                  <span class="m-lab">Confidence</span>
+                </div>
+                <div class="m-bar"><span style="width: 34%"></span></div>
+              </div>
+
+              <div class="metric dim2">
+                <div class="m-top">
+                  <span class="m-num">↺</span>
+                  <span class="m-lab">Resets</span>
+                </div>
+                <div class="m-bar"><span style="width: 58%"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <p class="note">
+            Investors win when a platform increases trust with scale — not when trust decays.
+          </p>
+        </div>
+      </section>
+
+      <!-- 03 — PROBLEM -->
+      <section class="slide" data-slide data-title="The problem">
+        <div class="content">
+          <div class="kicker">The problem</div>
+          <h2 class="title">
+            Modern systems optimize for attention.<br />
+            Humans need alignment.
+          </h2>
+
+          <div class="cols">
+            <div class="col">
+              <div class="col-head">What platforms optimize</div>
+              <ul class="bullets">
+                <li>Engagement metrics</li>
+                <li>Short-term prediction</li>
+                <li>Frequency and retention loops</li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <div class="col-head">What people experience</div>
+              <ul class="bullets">
+                <li>Decision fatigue</li>
+                <li>Burnout disguised as freedom</li>
+                <li>Frequent identity resets</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="body">
+            When incentives are engagement-based, signal quality degrades as scale increases.
+            ETHOS is designed to protect signal — so it compounds with scale.
+          </p>
+        </div>
+      </section>
+
+      <!-- 04 — GAP -->
+      <section class="slide" data-slide data-title="The gap">
+        <div class="content center">
+          <div class="kicker">The gap</div>
+          <h2 class="statement">
+            Personalization predicts behavior.<br />
+            It does not understand the person.
+          </h2>
+          <p class="subtle">Engagement is not alignment.</p>
+
+          <div class="gapline" aria-hidden="true">
+            <span>Behavior</span>
+            <span class="arrow">→</span>
+            <span>Prediction</span>
+            <span class="arrow">→</span>
+            <span>More noise</span>
+          </div>
+
+          <p class="body max">
+            ETHOS uses identity stability as the starting point — then builds direction on top.
+            This keeps incentives clean and makes monetization stronger later.
+          </p>
+        </div>
+      </section>
+
+      <!-- 05 — INSIGHT -->
+      <section class="slide" data-slide data-title="The insight">
+        <div class="content">
+          <div class="kicker">The insight</div>
+          <h2 class="title">Precision beats personalization.</h2>
+
+          <div class="grid">
+            <div class="figure">
+              <div class="frame portrait">
+                <img src={IMAGES.map} alt="Identity map diagram" />
+              </div>
+              <div class="caption">Identity is a stable signal — not a feed.</div>
+            </div>
+
+            <div class="copy">
+              <p class="body">
+                Identity must exist <strong>before</strong> decisions — not after.
+                When identity is stable, direction compounds across time and context.
+              </p>
+
+              <div class="mini">
+                <div class="mini-title">ETHOS principle</div>
+                <div class="mini-row">
+                  <span class="pill">Stability first</span>
+                  <span class="pill">Evidence gates</span>
+                  <span class="pill">No ranking loops</span>
+                </div>
+              </div>
+
+              <p class="note">
+                This is why ETHOS starts with experiences (proof) rather than content (performance).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 — SYSTEM -->
+      <section class="slide" data-slide data-title="The system">
+        <div class="content center">
+          <div class="kicker">The system</div>
+          <h2 class="title">A direction engine — not an engagement engine.</h2>
+
+          <div class="flow" aria-label="Identity to Direction flow">
+            <div class="node">Identity</div>
+            <div class="flow-arrow"></div>
+            <div class="node">Signal</div>
+            <div class="flow-arrow"></div>
+            <div class="node">Experience</div>
+            <div class="flow-arrow"></div>
+            <div class="node">Direction</div>
+          </div>
+
+          <p class="body max">
+            ETHOS preserves signal integrity through validation loops, confidence calibration, and guardrails.
+            The system only advances when proof holds — so scale increases trust, not noise.
+          </p>
+
+          <div class="microgrid">
+            <div class="micro">
+              <div class="mh">Stability</div>
+              <div class="ms">Test–retest reliability</div>
+            </div>
+            <div class="micro">
+              <div class="mh">Confidence</div>
+              <div class="ms">Uncertainty-aware outputs</div>
+            </div>
+            <div class="micro">
+              <div class="mh">Governance</div>
+              <div class="ms">Bias & drift monitoring</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 — WHY EXPERIENCES -->
+      <section class="slide" data-slide data-title="Why experiences">
+        <div class="content">
+          <div class="kicker">Why experiences</div>
+          <h2 class="title">
+            Experiences reveal identity faster than content.
+          </h2>
+
+          <div class="split">
+            <p class="body">
+              Content platforms encourage performance.
+              Experiences force real choice and generate high-signal feedback.
+              ETHOS begins where intention meets reality.
+            </p>
+
+            <div class="list">
+              <div class="li"><span class="dot"></span>Inquiry-first marketplace (no pressure)</div>
+              <div class="li"><span class="dot"></span>No ranking loops (no extraction)</div>
+              <div class="li"><span class="dot"></span>Signal grows from outcomes, not attention</div>
+              <div class="li"><span class="dot"></span>Clean incentives → stronger monetization later</div>
+            </div>
+          </div>
+
+          <p class="note">
+            This is the wedge: experiences create proof, proof creates retention, retention creates density.
+          </p>
+        </div>
+      </section>
+
+      <!-- 08 — PRODUCT TODAY -->
+      <section class="slide" data-slide data-title="What exists">
+        <div class="content">
+          <div class="kicker">What exists today</div>
+          <h2 class="title">Built already — designed for compounding.</h2>
+
+          <div class="tri">
+            <div class="block">
+              <div class="bh">Identity engine</div>
+              <div class="bd">Multi-framework synthesis with stability testing and confidence calibration.</div>
+              <div class="tags">
+                <span class="tag">Signal consistency</span>
+                <span class="tag">Privacy-first</span>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="bh">Experience layer</div>
+              <div class="bd">Inquiry-first marketplace designed for aligned discovery — no ranking, no ads.</div>
+              <div class="tags">
+                <span class="tag">No pressure</span>
+                <span class="tag">No manipulation</span>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="bh">Signal analytics</div>
+              <div class="bd">Density, rhythm, and alignment metrics to measure clarity at city scale.</div>
+              <div class="tags">
+                <span class="tag">City rollout</span>
+                <span class="tag">Guardrails</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="note">
+            ETHOS is not a concept. It is a built system moving toward proof gates.
+          </p>
+        </div>
+      </section>
+
+      <!-- 09 — COMPOUNDING / DENSITY -->
+      <section class="slide" data-slide data-title="Compounding">
+        <div class="content center">
+          <div class="kicker">Compounding</div>
+          <h2 class="title">Density increases clarity — if the signal is protected.</h2>
+
+          <div class="figure">
+            <div class="frame wide">
+              <img src={IMAGES.density} alt="City density visualization" />
+            </div>
+            <div class="caption">City-by-city ecosystems. Repeatable rollout. Protected incentives.</div>
+          </div>
+
+          <div class="math">
+            <div class="mitem">
+              <div class="mh">City rollout</div>
+              <div class="ms">1 city → 3 cities → 7 cities</div>
+            </div>
+            <div class="mitem">
+              <div class="mh">Compounding effect</div>
+              <div class="ms">More density → better fit → more trust → stronger returns</div>
+            </div>
+            <div class="mitem">
+              <div class="mh">Failure mode avoided</div>
+              <div class="ms">No ads early → no signal distortion</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 — BUSINESS MODEL -->
+      <section class="slide" data-slide data-title="Business model">
+        <div class="content">
+          <div class="kicker">Business model</div>
+          <h2 class="title">Users never pay with attention.</h2>
+
+          <div class="cols">
+            <div class="col">
+              <div class="col-head">Users</div>
+              <p class="body">
+                ETHOS is designed to reduce noise — not create dependency.
+                The user experience is clarity-first.
+              </p>
+              <ul class="bullets">
+                <li>No attention harvesting</li>
+                <li>No engagement inflation</li>
+                <li>No ranking pressure</li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <div class="col-head">Businesses</div>
+              <p class="body">
+                Businesses pay for aligned visibility and decision intelligence — not reach.
+              </p>
+              <ul class="bullets">
+                <li>Aligned demand in a city</li>
+                <li>Behavioral clustering & rhythm</li>
+                <li>Operational insight (space, pacing, offering)</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="note">
+            Clean incentives create higher long-term CPM power later — without contaminating early signal.
+          </p>
+        </div>
+      </section>
+
+      <!-- 11 — PRE-SEED ECONOMICS -->
+      <section class="slide" data-slide data-title="Economics">
+        <div class="content center">
+          <div class="kicker">Pre-seed economics</div>
+          <h2 class="title">12-month model: proof, not premature scale.</h2>
+
+          <div class="bars" role="img" aria-label="Allocation bars">
+            <div class="bar">
+              <div class="bfill" style="--w: 62%"></div>
+              <div class="blabel">Product & research <span>62%</span></div>
+            </div>
+            <div class="bar">
+              <div class="bfill" style="--w: 23%"></div>
+              <div class="blabel">Infrastructure & tooling <span>23%</span></div>
+            </div>
+            <div class="bar">
+              <div class="bfill" style="--w: 15%"></div>
+              <div class="blabel">Ops & legal <span>15%</span></div>
+            </div>
+          </div>
+
+          <div class="burn">
+            <div class="burn-row">
+              <div class="burn-k">Runway</div>
+              <div class="burn-v">12–15 months</div>
+            </div>
+            <div class="burn-row">
+              <div class="burn-k">Goal</div>
+              <div class="burn-v">City-level proof of signal density</div>
+            </div>
+            <div class="burn-row">
+              <div class="burn-k">Constraint</div>
+              <div class="burn-v">No ad incentives during validation</div>
+            </div>
+          </div>
+
+          <p class="note">
+            The pre-seed is used to validate compounding mechanics and lock defensibility.
+          </p>
+        </div>
+      </section>
+
+      <!-- 12 — FOUNDER -->
+      <section class="slide" data-slide data-title="Founder">
+        <div class="content">
+          <div class="kicker">Founder</div>
+          <h2 class="title">Built by a systems operator — not a hype machine.</h2>
+
+          <div class="grid founder">
+            <div class="figure">
+              <div class="frame portrait">
+                <img src={IMAGES.founder} alt="Founder portrait" />
+              </div>
+              <div class="caption">Solo founder, shipping fast, protecting integrity.</div>
+            </div>
+
+            <div class="copy">
+              <p class="body">
+                ETHOS is being built end-to-end: product, UX, system architecture, and validation logic.
+                The goal is not a team for optics — it is proof that earns the right to scale.
+              </p>
+
+              <div class="founder-list">
+                <div class="fli"><span class="dot"></span>Hands-on execution (already implemented)</div>
+                <div class="fli"><span class="dot"></span>AI / systems direction (governance + validation)</div>
+                <div class="fli"><span class="dot"></span>Team expansion later — without compromising ownership</div>
+              </div>
+
+              <p class="note">
+                ETHOS will add talent to accelerate — not to replace capability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13 — THE ASK -->
+      <section class="slide s-ask" data-slide data-title="The ask">
+        <div class="content center">
+          <div class="kicker">The ask</div>
+          <h2 class="title">Pre-seed to prove the compounding loop.</h2>
+
+          <div class="ask-amount">{PRESEED}</div>
+
+          <div class="ask-grid">
+            <div class="ask-item">
+              <div class="ah">Proof</div>
+              <div class="ad">Signal stability + density outcomes</div>
+            </div>
+            <div class="ask-item">
+              <div class="ah">Expansion</div>
+              <div class="ad">1 → 3 → 7 cities using repeatable playbook</div>
+            </div>
+            <div class="ask-item">
+              <div class="ah">Integrity</div>
+              <div class="ad">No ads early. No ranking loops. No extraction.</div>
+            </div>
+          </div>
+
+          <p class="final">
+            Build once.<br />
+            Compound for decades.
+          </p>
+        </div>
+      </section>
+
+    </div>
   </section>
 
   <script is:inline>
-    const slides = [...document.querySelectorAll(".slide")];
-    const indicator = document.getElementById("indicator");
-    let index = 0;
+    (() => {
+      const track = document.getElementById("track");
+      const slides = Array.from(document.querySelectorAll("[data-slide]"));
+      const hudIndex = document.getElementById("hudIndex");
+      const hudTotal = document.getElementById("hudTotal");
 
-    function update() {
-      indicator.textContent =
-        String(index + 1).padStart(2, "0") +
-        " / " +
-        String(slides.length).padStart(2, "0");
-      slides[index].scrollIntoView({ behavior: "smooth" });
-    }
+      if (!track || slides.length === 0 || !hudIndex || !hudTotal) return;
 
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight") index = Math.min(index + 1, slides.length - 1);
-      if (e.key === "ArrowLeft") index = Math.max(index - 1, 0);
-      update();
-    });
+      hudTotal.textContent = String(slides.length).padStart(2, "0");
 
-    document.getElementById("export").onclick = () => {
-      alert("PDF export hook ready.");
-    };
+      let current = 0;
+      let raf = 0;
 
-    update();
+      const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
+
+      // Observer for active slide index + class toggles
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            const el = e.target;
+            if (e.isIntersecting && e.intersectionRatio >= 0.55) {
+              slides.forEach((s) => s.classList.remove("active"));
+              el.classList.add("active");
+              current = slides.indexOf(el);
+              hudIndex.textContent = String(current + 1).padStart(2, "0");
+            }
+          });
+        },
+        { threshold: [0.35, 0.55, 0.72] }
+      );
+
+      slides.forEach((s) => io.observe(s));
+
+      // Deck movement: scroll-driven parallax + per-slide transforms
+      function tick() {
+        raf = 0;
+
+        const viewportH = window.innerHeight || 800;
+        const scrollY = window.scrollY || 0;
+
+        // Global parallax layers
+        const o1 = document.querySelector(".o1");
+        const o2 = document.querySelector(".o2");
+        const o3 = document.querySelector(".o3");
+        const imgwash = document.querySelector(".imgwash img");
+
+        if (o1) o1.style.transform = `translate3d(0, ${scrollY * 0.06}px, 0)`;
+        if (o2) o2.style.transform = `translate3d(0, ${scrollY * -0.04}px, 0)`;
+        if (o3) o3.style.transform = `translate3d(0, ${scrollY * 0.03}px, 0)`;
+        if (imgwash) imgwash.style.transform = `translate3d(0, ${scrollY * 0.02}px, 0) scale(1.05)`;
+
+        // Per-slide cinematic "enter" based on center proximity
+        slides.forEach((s) => {
+          const r = s.getBoundingClientRect();
+          const center = r.top + r.height * 0.5;
+          const dist = Math.abs(center - viewportH * 0.52);
+          const t = clamp(1 - dist / (viewportH * 0.9), 0, 1);
+
+          // transform intensity
+          const lift = (1 - t) * 18;
+          const blur = (1 - t) * 6;
+          const scale = 0.985 + t * 0.015;
+
+          s.style.setProperty("--t", String(t));
+          s.style.setProperty("--lift", `${lift}px`);
+          s.style.setProperty("--blur", `${blur}px`);
+          s.style.setProperty("--scale", `${scale}`);
+        });
+      }
+
+      function onScroll() {
+        if (raf) return;
+        raf = requestAnimationFrame(tick);
+      }
+
+      // Keyboard navigation (Arrow keys)
+      function goTo(i) {
+        const idx = clamp(i, 0, slides.length - 1);
+        slides[idx].scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowDown" || e.key === "ArrowRight") goTo(current + 1);
+        if (e.key === "ArrowUp" || e.key === "ArrowLeft") goTo(current - 1);
+      });
+
+      // Ensure snap works well after resize
+      window.addEventListener("resize", () => {
+        tick();
+      });
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      tick();
+
+      // Activate first slide explicitly
+      slides[0].classList.add("active");
+      hudIndex.textContent = "01";
+    })();
   </script>
 
   <style>
-    #deck {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem 6rem;
+    /* =========================
+       DECK — 2026 cinematic
+       ========================= */
+
+    .deck {
       position: relative;
+      min-height: 100vh;
     }
 
-    #indicator {
-      position: fixed;
-      top: 96px;
-      right: 24px;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+    /* Scroll-snap deck mechanics */
+    .track {
+      scroll-snap-type: y mandatory;
     }
 
     .slide {
-      min-height: 70vh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      position: relative;
+      min-height: 96vh;
+      padding: 5.5rem 1.5rem 4.5rem;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      border-top: 1px solid var(--border-subtle);
-      animation: fadeIn 160ms ease-out;
+      overflow: hidden;
+
+      /* Cinematic entry */
+      opacity: calc(0.72 + (var(--t) * 0.28));
+      transform: translate3d(0, var(--lift), 0) scale(var(--scale));
+      filter: blur(var(--blur));
+      transition: opacity 120ms linear;
+      will-change: transform, filter, opacity;
     }
 
-    h1 {
-      font-size: 2.6rem;
-      letter-spacing: -0.03em;
-      margin-bottom: 1rem;
+    /* Stronger stability once active */
+    .slide.active {
+      filter: blur(0px);
     }
 
-    .content p {
+    /* Content wrapper (professional deck width) */
+    .content {
+      width: min(1020px, 94vw);
+      margin: 0 auto;
+      position: relative;
+      z-index: 3;
+    }
+
+    .content.center {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    /* HUD */
+    .hud {
+      position: fixed;
+      top: 92px;
+      left: 0;
+      right: 0;
+      width: min(1180px, 94vw);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 50;
+      pointer-events: none;
+      mix-blend-mode: normal;
+    }
+
+    .hud-left {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      font-size: 0.85rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.62);
+    }
+
+    .hud-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 99px;
+      background: rgba(120,170,255,0.75);
+      box-shadow: 0 0 18px rgba(120,170,255,0.55);
+    }
+
+    .hud-right {
+      display: flex;
+      gap: 0.4rem;
+      align-items: baseline;
+      color: rgba(255,255,255,0.62);
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+    }
+
+    .hud-index {
+      color: rgba(255,255,255,0.88);
+    }
+
+    /* Global background stage */
+    .stage {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 20%, rgba(40,70,140,0.18), transparent 55%),
+                  radial-gradient(circle at 12% 70%, rgba(120,170,255,0.10), transparent 55%),
+                  radial-gradient(circle at 88% 80%, rgba(120,170,255,0.08), transparent 60%),
+                  #06070a;
+    }
+
+    .vignette {
+      position: absolute;
+      inset: -10%;
+      background: radial-gradient(circle at 50% 45%, transparent 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.85) 100%);
+      opacity: 0.95;
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.10;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    .scanline {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(255,255,255,0.03), transparent);
+      height: 140px;
+      width: 100%;
+      transform: translateY(-140px);
+      animation: scan 10s linear infinite;
+      opacity: 0.45;
+      mix-blend-mode: overlay;
+    }
+
+    @keyframes scan {
+      from { transform: translateY(-140px); }
+      to { transform: translateY(calc(100vh + 140px)); }
+    }
+
+    .orb {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 999px;
+      filter: blur(22px);
+      opacity: 0.20;
+      mix-blend-mode: screen;
+      background: radial-gradient(circle at 30% 30%, rgba(120,170,255,0.55), transparent 60%);
+      will-change: transform;
+    }
+
+    .o1 { top: -220px; left: -220px; }
+    .o2 { bottom: -260px; right: -260px; opacity: 0.16; }
+    .o3 { top: 40vh; right: 12vw; width: 520px; height: 520px; opacity: 0.12; }
+
+    .imgwash {
+      position: absolute;
+      inset: -10%;
+      opacity: 0.12;
+      filter: blur(10px) saturate(0.9);
+      mix-blend-mode: screen;
+      transform: translate3d(0,0,0);
+    }
+
+    .imgwash img {
+      width: 120%;
+      height: 120%;
+      object-fit: cover;
+      opacity: 0.85;
+      will-change: transform;
+    }
+
+    /* Typography */
+    .display {
+      font-size: clamp(3.2rem, 6vw, 5rem);
+      letter-spacing: -0.05em;
+      margin: 0.2rem 0 1rem;
+      line-height: 1.05;
+    }
+
+    .title {
+      font-size: clamp(2.0rem, 3.2vw, 2.75rem);
+      letter-spacing: -0.04em;
+      line-height: 1.18;
+      margin: 0 0 1.3rem;
+    }
+
+    .statement {
+      font-size: clamp(2.1rem, 3.5vw, 3.0rem);
+      letter-spacing: -0.04em;
+      line-height: 1.18;
+      margin: 0 0 1rem;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .lede {
+      font-size: 1.2rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.72);
+      max-width: 60ch;
+      margin: 0 0 2rem;
+    }
+
+    .body {
       font-size: 1.1rem;
-      max-width: 560px;
-      line-height: 1.6;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.72);
+      max-width: 70ch;
+      margin: 0;
     }
 
-    .muted {
-      color: var(--text-muted);
-      margin-top: 0.75rem;
+    .body.max { max-width: 78ch; margin: 1.2rem auto 0; }
+
+    .subtle {
+      color: rgba(255,255,255,0.60);
+      margin-top: 0.6rem;
     }
 
-    .compare {
+    .kicker {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(120,170,255,0.82);
+      margin-bottom: 0.8rem;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(120,170,255,0.85);
+      margin-bottom: 0.6rem;
+    }
+
+    .tagline {
+      color: rgba(255,255,255,0.62);
+      margin: 0 0 1.2rem;
+    }
+
+    .note {
+      margin-top: 1.6rem;
+      color: rgba(255,255,255,0.56);
+      line-height: 1.7;
+      max-width: 72ch;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 2.0rem 0 1.6rem;
+    }
+
+    /* Layout helpers */
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.6rem;
+      align-items: center;
+      margin-top: 1.2rem;
+    }
+
+    .cols {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 2.2rem;
+      margin-top: 1.4rem;
+    }
+
+    .col-head {
+      font-size: 0.9rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 0.9rem;
+    }
+
+    .bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .bullets li {
+      position: relative;
+      padding-left: 1.2rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.55;
+    }
+
+    .bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: rgba(120,170,255,0.85);
+    }
+
+    /* Metric stack */
+    .metrics {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .metric {
+      padding: 1.05rem 1.15rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(10px);
+    }
+
+    .metric.dim { opacity: 0.86; }
+    .metric.dim2 { opacity: 0.76; }
+
+    .m-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.8rem;
+    }
+
+    .m-num {
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.90);
+      letter-spacing: -0.02em;
+    }
+
+    .m-lab {
+      font-size: 0.85rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.58);
+    }
+
+    .m-bar {
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+
+    .m-bar span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(120,170,255,0.85), rgba(120,170,255,0.25));
+      box-shadow: 0 0 18px rgba(120,170,255,0.25);
+    }
+
+    /* Frames (no card UI, only media frames) */
+    .frame {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(120,170,255,0.18);
+      background: rgba(255,255,255,0.02);
+      box-shadow: 0 0 0 1px rgba(120,170,255,0.08), 0 18px 70px rgba(0,0,0,0.55);
+    }
+
+    .frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .frame.wide {
+      width: min(920px, 92vw);
+      aspect-ratio: 16 / 9;
+      margin: 0 auto;
+    }
+
+    .frame.portrait {
+      width: min(360px, 70vw);
+      aspect-ratio: 3 / 4;
+    }
+
+    .figure {
+      display: grid;
+      gap: 0.7rem;
+      justify-items: start;
+    }
+
+    .caption {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.55;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.6rem;
+      align-items: center;
+      margin-top: 1.6rem;
+    }
+
+    /* Hero-specific */
+    .s-hero .hero-row {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2.6rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .hero-proof {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      font-size: 0.82rem;
+      padding: 0.55rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      color: rgba(255,255,255,0.72);
+      backdrop-filter: blur(10px);
+    }
+
+    .bottomline {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 26px;
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+    }
+
+    .bottomline .dot {
+      width: 5px; height: 5px; border-radius: 999px;
+      background: rgba(120,170,255,0.6);
+      box-shadow: 0 0 12px rgba(120,170,255,0.45);
+    }
+
+    /* Mini row */
+    .mini {
+      margin-top: 1.4rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mini-title {
+      font-size: 0.85rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.58);
+      margin-bottom: 0.9rem;
+    }
+
+    .mini-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      font-size: 0.86rem;
+      padding: 0.5rem 0.72rem;
+      border-radius: 999px;
+      border: 1px solid rgba(120,170,255,0.16);
+      background: rgba(120,170,255,0.06);
+      color: rgba(255,255,255,0.72);
+    }
+
+    /* Flow */
+    .flow {
+      margin: 2.2rem auto 0;
+      width: min(980px, 92vw);
+      display: grid;
+      grid-template-columns: auto 1fr auto 1fr auto 1fr auto;
+      align-items: center;
+      gap: 0.9rem;
+      justify-content: center;
+    }
+
+    .node {
+      padding: 1.0rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.02);
+      color: rgba(255,255,255,0.82);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .flow-arrow {
+      height: 2px;
+      background: linear-gradient(90deg, rgba(120,170,255,0.15), rgba(120,170,255,0.85), rgba(120,170,255,0.15));
+      border-radius: 999px;
+      box-shadow: 0 0 18px rgba(120,170,255,0.22);
+      opacity: 0.85;
+    }
+
+    .microgrid {
+      margin: 1.8rem auto 0;
+      width: min(920px, 92vw);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1rem;
+    }
+
+    .micro {
+      padding: 1.1rem 1.2rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(10px);
+    }
+
+    .mh {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 0.4rem;
+    }
+
+    .ms {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.55;
+    }
+
+    /* List */
+    .list {
+      display: grid;
+      gap: 0.85rem;
+      padding: 1.0rem 0;
+    }
+
+    .li, .fli {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.55;
+      font-size: 1.0rem;
+    }
+
+    .li .dot, .fli .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(120,170,255,0.7);
+      box-shadow: 0 0 18px rgba(120,170,255,0.35);
+      margin-top: 0.55rem;
+      flex: 0 0 auto;
+    }
+
+    /* Tri blocks */
+    .tri {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1.2rem;
       margin-top: 1.5rem;
     }
 
-    .diagram {
+    .block {
+      padding: 1.4rem 1.35rem;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(10px);
+    }
+
+    .bh {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.86);
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.02em;
+    }
+
+    .bd {
+      color: rgba(255,255,255,0.66);
+      line-height: 1.6;
+      font-size: 0.98rem;
+    }
+
+    .tags {
+      margin-top: 1.0rem;
       display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-size: 0.82rem;
+      padding: 0.45rem 0.62rem;
+      border-radius: 999px;
+      border: 1px solid rgba(120,170,255,0.14);
+      background: rgba(120,170,255,0.05);
+      color: rgba(255,255,255,0.66);
+    }
+
+    /* Math */
+    .math {
+      width: min(920px, 92vw);
+      margin: 1.8rem auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 1rem;
+      text-align: left;
+    }
+
+    .mitem {
+      padding: 1.1rem 1.2rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Bars */
+    .bars {
+      width: min(760px, 92vw);
+      margin: 2rem auto 0;
+      display: grid;
+      gap: 1.1rem;
+      text-align: left;
+    }
+
+    .bar {
+      position: relative;
+      height: 44px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .bfill {
+      position: absolute;
+      inset: 0;
+      width: var(--w);
+      background: linear-gradient(90deg, rgba(120,170,255,0.80), rgba(120,170,255,0.22));
+      box-shadow: 0 0 24px rgba(120,170,255,0.18);
+      border-radius: 999px;
+    }
+
+    .blabel {
+      position: absolute;
+      inset: 0;
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+      padding: 0 1.0rem;
+      color: rgba(255,255,255,0.78);
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+    }
+
+    .blabel span {
+      color: rgba(255,255,255,0.62);
+      font-size: 0.9rem;
+    }
+
+    /* Burn */
+    .burn {
+      width: min(680px, 92vw);
+      margin: 1.6rem auto 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.2rem;
+      display: grid;
+      gap: 0.85rem;
+      text-align: left;
+    }
+
+    .burn-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.2rem;
+      color: rgba(255,255,255,0.68);
+      font-size: 1.0rem;
+    }
+
+    .burn-k {
+      color: rgba(255,255,255,0.58);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    .burn-v {
+      color: rgba(255,255,255,0.82);
+      letter-spacing: -0.01em;
+    }
+
+    /* Founder */
+    .grid.founder {
+      grid-template-columns: 0.9fr 1.1fr;
+      margin-top: 1.8rem;
+      align-items: center;
+    }
+
+    .founder-list {
+      margin-top: 1.4rem;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    /* Ask */
+    .ask-amount {
+      margin-top: 1.2rem;
+      font-size: clamp(2.8rem, 4.8vw, 4.2rem);
+      letter-spacing: -0.04em;
+      color: rgba(255,255,255,0.92);
+      text-shadow: 0 0 24px rgba(120,170,255,0.12);
+    }
+
+    .ask-grid {
+      width: min(920px, 92vw);
+      margin: 2.0rem auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .ask-item {
+      padding: 1.2rem 1.25rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(10px);
+    }
+
+    .ah {
+      font-size: 0.86rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(120,170,255,0.85);
+      margin-bottom: 0.55rem;
+    }
+
+    .ad {
+      color: rgba(255,255,255,0.72);
+      line-height: 1.55;
+      font-size: 0.98rem;
+    }
+
+    .final {
+      margin-top: 2.1rem;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.5;
+      font-size: 1.15rem;
+    }
+
+    /* GAP line */
+    .gapline {
+      margin: 2.0rem auto 0;
+      width: min(860px, 92vw);
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      color: rgba(255,255,255,0.62);
       font-weight: 500;
-      margin-bottom: 1rem;
     }
 
-    ul {
-      margin-top: 1rem;
-      padding-left: 1rem;
+    .gapline .arrow {
+      opacity: 0.5;
     }
 
-    #export {
-      margin-top: 4rem;
-      background: none;
-      border: 1px solid var(--border-subtle);
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      cursor: pointer;
+    /* Slide-specific cinematic accents (no cards) */
+    .s-hero::before,
+    .s-ask::before {
+      content: "";
+      position: absolute;
+      inset: -10%;
+      background: radial-gradient(circle at 50% 35%, rgba(120,170,255,0.18), transparent 55%);
+      opacity: 0.9;
+      z-index: 1;
+      pointer-events: none;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
+    .s-hero .content,
+    .s-ask .content {
+      z-index: 3;
     }
 
-    @media (prefers-color-scheme: dark) {
-      #deck {
-        background: #0b0b0c;
-      }
+    /* Ensure hero has breathing room without "too much spacing between slides" */
+    .slide + .slide {
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hud { top: 82px; }
+      .split { grid-template-columns: 1fr; }
+      .cols { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .grid.founder { grid-template-columns: 1fr; }
+      .tri { grid-template-columns: 1fr; }
+      .math { grid-template-columns: 1fr; }
+      .ask-grid { grid-template-columns: 1fr; }
+      .microgrid { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: 1fr; gap: 0.7rem; }
+      .flow-arrow { height: 10px; border-radius: 999px; opacity: 0.25; }
     }
   </style>
 </BaseLayout>

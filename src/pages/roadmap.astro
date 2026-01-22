@@ -3,244 +3,634 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-<section class="roadmap-root">
-
-  <!-- INTRO -->
-  <header class="roadmap-intro">
-    <h1>Roadmap</h1>
-    <p>
-      ETHOS is not built on timelines.<br />
-      It advances only when proof holds.
-    </p>
-  </header>
-
-  <!-- FIELD -->
-  <section class="roadmap-field" id="roadmapField">
-
-    <!-- PATH -->
-    <svg class="path-svg" viewBox="0 0 1000 7600" preserveAspectRatio="none">
-      <path
-        id="pathBase"
-        d="M500 0
-           C480 800, 520 1200, 500 1600
-           C480 2400, 520 2800, 500 3200
-           C480 4000, 520 4400, 500 4800
-           C480 5600, 520 6000, 500 6400
-           C480 7000, 520 7300, 500 7600"
-        class="path-base"
-        fill="none"
-      />
-      <path
-        id="pathGlow"
-        d="M500 0
-           C480 800, 520 1200, 500 1600
-           C480 2400, 520 2800, 500 3200
-           C480 4000, 520 4400, 500 4800
-           C480 5600, 520 6000, 500 6400
-           C480 7000, 520 7300, 500 7600"
-        class="path-glow"
-        fill="none"
-      />
-    </svg>
-
-    <!-- PHASES -->
-
-    <!-- 0–1 -->
-    <article class="phase left" data-phase data-buffer="0.18" style="--top: 600px;">
-      <span class="phase-tag">Years 0–1</span>
-      <h2>Signal integrity</h2>
-      <p class="phase-lede">
-        Build and validate the identity engine. Signal must remain stable across
-        time, context, and real-world use.
-      </p>
-      <ul class="phase-list">
-        <li><strong>Algorithm v1:</strong> multi-framework synthesis</li>
-        <li><strong>Validation:</strong> test–retest + calibration</li>
-        <li><strong>App:</strong> discovery → profile → inquiry</li>
-        <li><strong>Ethics:</strong> no ranking, no nudges</li>
-      </ul>
-      <div class="proof-gate">Signal holds under repetition.</div>
-    </article>
-
-    <!-- 1–2 -->
-    <article class="phase right" data-phase data-buffer="0.18" style="--top: 1800px;">
-      <span class="phase-tag">Years 1–2</span>
-      <h2>Marketplace wedge</h2>
-      <p class="phase-lede">
-        Experiences validate alignment faster than content.
-        Truth emerges through outcomes.
-      </p>
-      <ul class="phase-list">
-        <li><strong>Inquiry-first:</strong> no pressure</li>
-        <li><strong>Business intel v1:</strong> aligned demand</li>
-        <li><strong>Signal density:</strong> city-level fit</li>
-        <li><strong>Language guardrails:</strong> anti-manipulation</li>
-      </ul>
-      <div class="proof-gate">Users return unaided.</div>
-    </article>
-
-    <!-- 2–3 -->
-    <article class="phase left" data-phase data-buffer="0.20" style="--top: 3000px;">
-      <span class="phase-tag">Years 2–3</span>
-      <h2>City compounding</h2>
-      <p class="phase-lede">
-        Each city is an independent ecosystem tuned for density
-        without degrading clarity.
-      </p>
-      <ul class="phase-list">
-        <li><strong>City playbook:</strong> repeatable launches</li>
-        <li><strong>Temporal modeling:</strong> rhythm over rank</li>
-        <li><strong>Environment sensitivity:</strong> pace & noise</li>
-        <li><strong>Retention:</strong> direction, not addiction</li>
-      </ul>
-      <div class="proof-gate">Density without distortion.</div>
-    </article>
-
-    <!-- 3–4 -->
-    <article class="phase right" data-phase data-buffer="0.22" style="--top: 4300px;">
-      <span class="phase-tag">Years 3–4</span>
-      <h2>Data infrastructure</h2>
-      <p class="phase-lede">
-        ETHOS hardens into a longitudinal identity system.
-        Signal persists safely across life phases.
-      </p>
-      <ul class="phase-list">
-        <li><strong>Long-term storage:</strong> identity over time</li>
-        <li><strong>Context graph:</strong> environment × timing</li>
-        <li><strong>Privacy:</strong> minimization & isolation</li>
-        <li><strong>Governance:</strong> auditability</li>
-      </ul>
-      <div class="proof-gate">Signal persists without decay.</div>
-    </article>
-
-    <!-- 4–5 -->
-    <article class="phase left" data-phase data-buffer="0.24" style="--top: 5600px;">
-      <span class="phase-tag">Years 4–5</span>
-      <h2>Machine intelligence layer</h2>
-      <p class="phase-lede">
-        Machine learning enhances insight without turning people
-        into targets.
-      </p>
-      <ul class="phase-list">
-        <li><strong>Pattern inference:</strong> traits vs transitions</li>
-        <li><strong>Confidence modeling:</strong> uncertainty-aware</li>
-        <li><strong>Drift detection:</strong> bias monitoring</li>
-        <li><strong>Human-in-loop:</strong> explainability first</li>
-      </ul>
-      <div class="proof-gate">Accuracy improves ethically.</div>
-    </article>
-
-    <!-- HORIZON -->
-    <article class="horizon" data-horizon style="--top: 6900px;">
-      <span class="phase-tag">10-year horizon</span>
-      <h2>Directional infrastructure</h2>
+  <section class="roadmap-root">
+    <!-- INTRO -->
+    <header class="roadmap-intro">
+      <h1>Roadmap</h1>
       <p>
-        ETHOS becomes a persistent compass beneath decisions —
-        invisible, trusted, and embedded.
+        ETHOS is not built on timelines.<br />
+        It advances only when proof holds.
       </p>
-      <div class="horizon-grid">
-        <div class="horizon-card">
-          <h3>Identity portability</h3>
-          <p>Direction persists across contexts.</p>
-        </div>
-        <div class="horizon-card">
-          <h3>Institutional integration</h3>
-          <p>Adopted for long-term coherence.</p>
-        </div>
-        <div class="horizon-card">
-          <h3>Ethical intelligence</h3>
-          <p>No ads. No extraction. Ever.</p>
-        </div>
-      </div>
-    </article>
+    </header>
 
+    <!-- ROADMAP FIELD -->
+    <section class="roadmap-field" id="roadmapField">
+      <!-- MAIN PATH (BASE + GLOW) -->
+      <svg class="path-svg" viewBox="0 0 1000 5200" preserveAspectRatio="none" aria-hidden="true">
+        <path
+          id="pathBase"
+          d="M500 0
+             C492 400, 508 650, 500 900
+             C492 1300, 508 1550, 500 1800
+             C492 2200, 508 2450, 500 2700
+             C492 3100, 508 3350, 500 3600
+             C492 4000, 508 4300, 500 4600
+             C492 4900, 508 5050, 500 5200"
+          class="path-base"
+          fill="none"
+        />
+        <path
+          id="pathGlow"
+          d="M500 0
+             C492 400, 508 650, 500 900
+             C492 1300, 508 1550, 500 1800
+             C492 2200, 508 2450, 500 2700
+             C492 3100, 508 3350, 500 3600
+             C492 4000, 508 4300, 500 4600
+             C492 4900, 508 5050, 500 5200"
+          class="path-glow"
+          fill="none"
+        />
+      </svg>
+
+      <!-- CONNECTORS + NODES (DYNAMIC) -->
+      <svg class="connect-svg" viewBox="0 0 1000 5200" preserveAspectRatio="none" aria-hidden="true">
+        <g id="connectors"></g>
+        <g id="nodes"></g>
+      </svg>
+
+      <!-- PHASES -->
+      <article class="phase left" data-phase data-enter="0.10" data-exit="0.36" style="--top: 220px;">
+        <div class="phase-head">
+          <span class="phase-tag">Years 0–1</span>
+          <h2>Signal integrity</h2>
+        </div>
+        <p class="phase-lede">
+          Build the identity engine and prove stability. Results must remain consistent across time,
+          context, and real-world interaction — before expansion.
+        </p>
+        <ul class="phase-list">
+          <li><strong>Algorithm v1:</strong> multi-framework synthesis → stable primary/secondary signals</li>
+          <li><strong>Validation loop:</strong> test–retest reliability + confidence calibration</li>
+          <li><strong>App foundation:</strong> discovery → profile → inquiry flow (minimal, high-signal)</li>
+          <li><strong>Data discipline:</strong> privacy-first storage, bias monitoring, audit logs</li>
+        </ul>
+        <div class="proof-gate">
+          <span class="gate-label">Proof gate</span>
+          <span class="gate-text">Signal holds under repetition and context.</span>
+        </div>
+      </article>
+
+      <article class="phase right" data-phase data-enter="0.24" data-exit="0.50" style="--top: 1020px;">
+        <div class="phase-head">
+          <span class="phase-tag">Years 1–2</span>
+          <h2>Marketplace wedge</h2>
+        </div>
+        <p class="phase-lede">
+          Validate ETHOS through experiences. Experiences produce faster truth than content —
+          and create the first compounding loop.
+        </p>
+        <ul class="phase-list">
+          <li><strong>Inquiry-first marketplace:</strong> no booking pressure, no ranking, no ads</li>
+          <li><strong>Business intelligence v1:</strong> aligned demand + behavioural clustering</li>
+          <li><strong>Signal density:</strong> measure city-level fit without extraction or manipulation</li>
+          <li><strong>Ethical guardrails:</strong> language constraints, anti-urgency, anti-targeting</li>
+        </ul>
+        <div class="proof-gate">
+          <span class="gate-label">Proof gate</span>
+          <span class="gate-text">Users return without nudges. Businesses see clearer decisions.</span>
+        </div>
+      </article>
+
+      <article class="phase left" data-phase data-enter="0.38" data-exit="0.64" style="--top: 1820px;">
+        <div class="phase-head">
+          <span class="phase-tag">Years 2–3</span>
+          <h2>City compounding</h2>
+        </div>
+        <p class="phase-lede">
+          Expand city by city. Each city is an independent ecosystem, tuned for density
+          without degrading clarity.
+        </p>
+        <ul class="phase-list">
+          <li><strong>City rollout system:</strong> repeatable launch playbook + operator onboarding</li>
+          <li><strong>Temporal modeling:</strong> when people thrive (rhythm), not who performs (rank)</li>
+          <li><strong>Environment sensitivity:</strong> noise, pacing, group size, context preferences</li>
+          <li><strong>Retention mechanics:</strong> compounding direction, not engagement loops</li>
+        </ul>
+        <div class="proof-gate">
+          <span class="gate-label">Proof gate</span>
+          <span class="gate-text">Density increases without signal distortion.</span>
+        </div>
+      </article>
+
+      <article class="phase right" data-phase data-enter="0.52" data-exit="0.78" style="--top: 2620px;">
+        <div class="phase-head">
+          <span class="phase-tag">Years 3–4</span>
+          <h2>Data infrastructure</h2>
+        </div>
+        <p class="phase-lede">
+          Harden ETHOS into a longitudinal identity system. Signals persist safely across life phases,
+          environments, and decisions — without surveillance incentives.
+        </p>
+        <ul class="phase-list">
+          <li><strong>Longitudinal identity graph:</strong> stable traits + evolving context over time</li>
+          <li><strong>Context model:</strong> environment × timing × state → interpretable direction</li>
+          <li><strong>Privacy architecture:</strong> minimization, isolation, and safe defaults</li>
+          <li><strong>Governance:</strong> audit trails, access boundaries, and integrity checks</li>
+        </ul>
+        <div class="proof-gate">
+          <span class="gate-label">Proof gate</span>
+          <span class="gate-text">Signal persists without decay or distortion.</span>
+        </div>
+      </article>
+
+      <article class="phase left" data-phase data-enter="0.66" data-exit="0.90" style="--top: 3420px;">
+        <div class="phase-head">
+          <span class="phase-tag">Years 4–5</span>
+          <h2>Machine intelligence layer</h2>
+        </div>
+        <p class="phase-lede">
+          With multi-city stability and longitudinal data, ETHOS becomes a learning system.
+          ML improves clarity without turning people into targets.
+        </p>
+        <ul class="phase-list">
+          <li><strong>ML inference:</strong> stable patterns vs temporary states (life transitions)</li>
+          <li><strong>Confidence engine:</strong> calibrated uncertainty + explanation-first outputs</li>
+          <li><strong>Privacy-preserving analytics:</strong> aggregation, minimization, governance</li>
+          <li><strong>Model oversight:</strong> drift monitoring, bias checks, auditability</li>
+        </ul>
+        <div class="proof-gate">
+          <span class="gate-label">Proof gate</span>
+          <span class="gate-text">Accuracy improves while ethics remain intact.</span>
+        </div>
+      </article>
+
+      <article class="phase right" data-phase data-enter="0.78" data-exit="0.98" style="--top: 4220px;">
+        <div class="phase-head">
+          <span class="phase-tag">Years 5+</span>
+          <h2>Cross-domain surfaces</h2>
+        </div>
+        <p class="phase-lede">
+          Identity becomes infrastructure. Experiences remain the wedge, but ETHOS surfaces
+          direction across life domains — calmly, with restraint.
+        </p>
+        <ul class="phase-list">
+          <li><strong>Domains:</strong> travel, wellness, work environments, community rhythm</li>
+          <li><strong>Context engine:</strong> environment + timing + state → better-fit suggestions</li>
+          <li><strong>Business intelligence v2:</strong> operational insight (space, pacing, offering design)</li>
+          <li><strong>Partner readiness:</strong> integration primitives, permissions, portability</li>
+        </ul>
+        <div class="proof-gate">
+          <span class="gate-label">Proof gate</span>
+          <span class="gate-text">Guidance without prescription or extraction.</span>
+        </div>
+      </article>
+
+      <!-- 10-YEAR HORIZON -->
+      <article class="horizon" data-horizon data-enter="0.88" style="--top: 4940px;">
+        <span class="horizon-tag">10-year horizon</span>
+        <h2>Directional infrastructure</h2>
+        <p>
+          ETHOS becomes a persistent compass layer beneath decisions — invisible, trusted,
+          and embedded across platforms and institutions. Not a product. A system.
+        </p>
+        <div class="horizon-grid">
+          <div class="horizon-card">
+            <h3>Identity portability</h3>
+            <p>Users carry direction across contexts without re-starting.</p>
+          </div>
+          <div class="horizon-card">
+            <h3>Institutional integration</h3>
+            <p>Partners adopt ETHOS for fit, safety, and long-term coherence.</p>
+          </div>
+          <div class="horizon-card">
+            <h3>Ethical intelligence</h3>
+            <p>Signal compounds without ads, ranking, or behavioral extraction.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- CLOSE -->
+    <footer class="roadmap-close">
+      <p>
+        ETHOS does not chase growth.<br />
+        It compounds by protecting signal integrity.
+      </p>
+    </footer>
   </section>
 
-  <footer class="roadmap-close">
-    <p>ETHOS compounds by protecting signal integrity.</p>
-  </footer>
+  <script is:inline>
+    (() => {
+      const field = document.getElementById("roadmapField");
+      const pathGlow = document.getElementById("pathGlow");
+      const connectorsG = document.getElementById("connectors");
+      const nodesG = document.getElementById("nodes");
+      const phases = Array.from(field.querySelectorAll("[data-phase]"));
+      const horizon = field.querySelector("[data-horizon]");
 
-</section>
+      if (!field || !pathGlow || !connectorsG || !nodesG || phases.length === 0) return;
 
-<script is:inline>
-(() => {
-  const field = document.getElementById("roadmapField");
-  const glow = document.getElementById("pathGlow");
-  const phases = [...field.querySelectorAll("[data-phase]")];
-  const horizon = field.querySelector("[data-horizon]");
+      const VBW = 1000;
+      const VBH = 5200;
+      const NODE_X = VBW * 0.5;
 
-  const len = glow.getTotalLength();
-  glow.style.strokeDasharray = len;
-  glow.style.strokeDashoffset = len;
+      let raf = 0;
+      let totalLen = 0;
 
-  function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+      const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 
-  function tick(){
-    const rect = field.getBoundingClientRect();
-    const vh = window.innerHeight;
-    const progress = clamp((vh*0.6 - rect.top) / rect.height, 0, 1);
+      function clearSVG(group) {
+        while (group.firstChild) group.removeChild(group.firstChild);
+      }
 
-    glow.style.strokeDashoffset = len * (1 - progress);
+      function el(tag, attrs = {}) {
+        const n = document.createElementNS("http://www.w3.org/2000/svg", tag);
+        Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, String(v)));
+        return n;
+      }
 
-    phases.forEach(p=>{
-      const top = p.offsetTop / field.offsetHeight;
-      const buffer = parseFloat(p.dataset.buffer || "0.15");
-      const active = progress > top - buffer && progress < top + buffer*2;
-      p.classList.toggle("active", active);
-    });
+      function measure() {
+        totalLen = pathGlow.getTotalLength();
+        pathGlow.style.strokeDasharray = String(totalLen);
+        pathGlow.style.strokeDashoffset = String(totalLen);
 
-    if(horizon){
-      const hTop = horizon.offsetTop / field.offsetHeight;
-      horizon.classList.toggle("active", progress > hTop - 0.25);
+        clearSVG(connectorsG);
+        clearSVG(nodesG);
+
+        const fieldRect = field.getBoundingClientRect();
+        const scaleX = VBW / fieldRect.width;
+        const scaleY = VBH / field.offsetHeight;
+
+        const items = [...phases, ...(horizon ? [horizon] : [])];
+
+        items.forEach((card) => {
+          const r = card.getBoundingClientRect();
+          const centerY = (r.top - fieldRect.top) + r.height * 0.5;
+          const cy = clamp(centerY * scaleY, 20, VBH - 20);
+
+          const isRight = card.classList.contains("right");
+          const edgeX = isRight ? (r.left - fieldRect.left) : (r.right - fieldRect.left);
+          const x1 = clamp(edgeX * scaleX, 0, VBW);
+          const x2 = NODE_X;
+
+          const line = el("path", {
+            d: `M ${x1} ${cy} C ${(x1 + x2) * 0.5} ${cy - 28}, ${(x1 + x2) * 0.5} ${cy + 28}, ${x2} ${cy}`,
+            class: "connector"
+          });
+          connectorsG.appendChild(line);
+
+          const ring = el("circle", { cx: x2, cy, r: 14, class: "node-ring" });
+          nodesG.appendChild(ring);
+
+          const dot = el("circle", { cx: x2, cy, r: 5, class: "node-dot" });
+          nodesG.appendChild(dot);
+
+          card.dataset.p = String(clamp(centerY / field.offsetHeight, 0, 1));
+        });
+      }
+
+      function setActiveState(progress) {
+        // stage z-index so the active card is always on top, but never overlaps physically due to spacing
+        const all = [...phases, ...(horizon ? [horizon] : [])];
+        all.forEach((n) => n.style.zIndex = "2");
+
+        phases.forEach((card) => {
+          const enter = Number(card.dataset.enter || 0);
+          const exit = Number(card.dataset.exit || 1);
+          const active = progress >= enter && progress <= exit;
+          card.classList.toggle("active", active);
+          if (active) card.style.zIndex = "6";
+        });
+
+        if (horizon) {
+          const enter = Number(horizon.dataset.enter || 0.88);
+          const active = progress >= enter;
+          horizon.classList.toggle("active", active);
+          if (active) horizon.style.zIndex = "5";
+        }
+      }
+
+      function tick() {
+        raf = 0;
+
+        const rect = field.getBoundingClientRect();
+        const vh = window.innerHeight || 800;
+
+        // Slow the progress mapping => longer dwell per section
+        const viewportY = vh * 0.58;
+        const within = viewportY - rect.top;
+        const progress = clamp(within / rect.height, 0, 1);
+
+        const draw = totalLen * (1 - progress);
+        pathGlow.style.strokeDashoffset = String(draw);
+
+        setActiveState(progress);
+
+        field.style.setProperty("--progress", String(progress));
+      }
+
+      function onScroll() {
+        if (raf) return;
+        raf = window.requestAnimationFrame(tick);
+      }
+
+      const ro = new ResizeObserver(() => {
+        measure();
+        tick();
+      });
+
+      measure();
+      tick();
+
+      ro.observe(field);
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", () => {
+        measure();
+        tick();
+      });
+    })();
+  </script>
+
+  <style>
+    /* ROOT */
+    .roadmap-root {
+      padding: 6rem 1.5rem 14rem;
     }
-  }
 
-  window.addEventListener("scroll", tick, { passive:true });
-  window.addEventListener("resize", tick);
-  tick();
-})();
-</script>
+    /* INTRO */
+    .roadmap-intro {
+      max-width: 780px;
+      margin: 0 auto 10rem;
+      text-align: center;
+    }
+    .roadmap-intro h1 {
+      font-size: 3.2rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.2rem;
+    }
+    .roadmap-intro p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
 
-<style>
-.roadmap-root{padding:6rem 1.5rem 20rem;}
-.roadmap-field{position:relative;max-width:1200px;margin:0 auto;min-height:7600px;}
+    /* FIELD */
+    .roadmap-field {
+      --progress: 0;
+      position: relative;
+      max-width: 1120px;
+      margin: 0 auto 12rem;
+      min-height: 5600px; /* more physical space => no overlap */
+      padding-bottom: 12rem;
+    }
 
-.phase{
-  position:absolute;
-  width:min(620px,48vw);
-  padding:3rem;
-  border-radius:36px;
-  background:rgba(255,255,255,.045);
-  border:1px solid rgba(120,170,255,.25);
-  backdrop-filter:blur(20px);
-  opacity:0;
-  transform:translateY(220px);
-  transition:opacity 1.3s ease,transform 1.3s ease;
-  z-index:3;
-}
-.phase.active{opacity:1;transform:none;}
-.phase.left{left:0;}
-.phase.right{right:0;}
+    /* SVG LAYERS */
+    .path-svg,
+    .connect-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
 
-.horizon{
-  position:absolute;
-  left:0;right:0;
-  max-width:1200px;
-  margin:auto;
-  padding:4rem;
-  border-radius:44px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(120,170,255,.22);
-  opacity:0;
-  transform:translateY(260px);
-  transition:opacity 1.5s ease,transform 1.5s ease;
-  z-index:1;
-}
-.horizon.active{opacity:1;transform:none;}
+    .path-base {
+      stroke: rgba(120,170,255,0.22);
+      stroke-width: 2;
+      stroke-dasharray: 6 10;
+      opacity: 0.7;
+    }
 
-@media(max-width:1000px){
-  .phase{width:92vw;left:0!important;right:0!important;}
-  .horizon-grid{grid-template-columns:1fr;}
-}
-</style>
+    .path-glow {
+      stroke: rgba(120,170,255,0.95);
+      stroke-width: 3;
+      filter: drop-shadow(0 0 18px rgba(120,170,255,0.9));
+      opacity: 0.9;
+    }
+
+    .connector {
+      fill: none;
+      stroke: rgba(120,170,255,0.20);
+      stroke-width: 2;
+      opacity: 0.9;
+      transition: stroke 300ms ease, opacity 300ms ease;
+    }
+
+    .roadmap-field {
+      --conn: calc(0.20 + (var(--progress) * 0.55));
+    }
+    .roadmap-field .connector {
+      stroke: rgba(120,170,255,var(--conn));
+      filter: drop-shadow(0 0 10px rgba(120,170,255, calc(0.20 + (var(--progress) * 0.35))));
+    }
+
+    .node-ring {
+      fill: rgba(120,170,255,0.06);
+      stroke: rgba(120,170,255,0.30);
+      stroke-width: 1;
+      filter: drop-shadow(0 0 16px rgba(120,170,255,0.35));
+      opacity: 0.9;
+    }
+
+    .node-dot {
+      fill: rgba(255,255,255,0.82);
+      filter: drop-shadow(0 0 10px rgba(120,170,255,0.6));
+      opacity: 0.95;
+    }
+
+    /* PHASE CARDS */
+    .phase {
+      position: absolute;
+      top: var(--top);
+      width: min(560px, 46vw);
+      padding: 2.5rem 2.7rem;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(120,170,255,0.22);
+      backdrop-filter: blur(18px);
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(120px);
+      transition: opacity 900ms ease, transform 900ms ease, border-color 700ms ease, box-shadow 700ms ease;
+      will-change: transform, opacity;
+    }
+
+    .phase.left { left: 0; }
+    .phase.right { right: 0; }
+
+    .phase.active {
+      opacity: 1;
+      transform: translateY(0);
+      border-color: rgba(120,170,255,0.40);
+      box-shadow: 0 0 0 1px rgba(120,170,255,0.10), 0 22px 80px rgba(0,0,0,0.55);
+    }
+
+    .phase-head {
+      display: grid;
+      gap: 0.6rem;
+      margin-bottom: 1.0rem;
+    }
+
+    .phase-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(120,170,255,0.85);
+    }
+
+    .phase h2 {
+      font-size: 1.9rem;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+
+    .phase-lede {
+      color: rgba(255,255,255,0.78);
+      line-height: 1.7;
+      margin: 0 0 1.35rem;
+      max-width: 56ch;
+    }
+
+    .phase-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.6rem;
+      display: grid;
+      gap: 0.72rem;
+    }
+
+    .phase-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.6;
+    }
+
+    .phase-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: rgba(120,170,255,0.85);
+    }
+
+    .phase-list strong {
+      color: rgba(255,255,255,0.90);
+      font-weight: 650;
+    }
+
+    .proof-gate {
+      display: grid;
+      gap: 0.35rem;
+      padding: 1.15rem 1.25rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(120,170,255,0.16);
+    }
+
+    .gate-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.52);
+    }
+
+    .gate-text {
+      color: rgba(255,255,255,0.80);
+      line-height: 1.55;
+    }
+
+    /* HORIZON BLOCK */
+    .horizon {
+      position: absolute;
+      top: var(--top);
+      left: 0;
+      right: 0;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.9rem 3.1rem;
+      border-radius: 34px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(120,170,255,0.18);
+      backdrop-filter: blur(18px);
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(140px);
+      transition: opacity 900ms ease, transform 900ms ease, border-color 700ms ease;
+      will-change: transform, opacity;
+    }
+
+    .horizon.active {
+      opacity: 1;
+      transform: translateY(0);
+      border-color: rgba(120,170,255,0.34);
+    }
+
+    .horizon-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(120,170,255,0.85);
+      margin-bottom: 0.9rem;
+    }
+
+    .horizon h2 {
+      font-size: 2.0rem;
+      margin: 0 0 0.95rem;
+      letter-spacing: -0.02em;
+    }
+
+    .horizon p {
+      margin: 0 0 1.9rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.75;
+      max-width: 76ch;
+    }
+
+    .horizon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .horizon-card {
+      padding: 1.35rem 1.45rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(120,170,255,0.14);
+    }
+
+    .horizon-card h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.90);
+    }
+
+    .horizon-card p {
+      margin: 0;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* CLOSE */
+    .roadmap-close {
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 980px) {
+      .roadmap-field {
+        min-height: 6200px;
+      }
+      .phase {
+        width: min(820px, 92vw);
+      }
+      .phase.left,
+      .phase.right {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+      .horizon-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </BaseLayout>
