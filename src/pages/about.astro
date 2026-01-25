@@ -49,7 +49,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="section-head" data-reveal>
         <h2>The thesis</h2>
         <p>
-          When choice expands faster than clarity, people don’t become free — they become fragmented.
+          When choice expands faster than clarity, people don't become free — they become fragmented.
         </p>
       </div>
 
@@ -197,6 +197,49 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </section>
 
+    <!-- PROOF OF PULL -->
+    <section class="about-section">
+      <div class="section-head" data-reveal>
+        <h2>Why people want this to exist</h2>
+        <p>
+          Before using ETHOS, we asked people and businesses if this system should exist at all.
+        </p>
+      </div>
+
+      <div class="proof-tabs" data-reveal>
+        <div class="tab-controls">
+          <button class="tab-btn active" data-tab="people">People</button>
+          <button class="tab-btn" data-tab="businesses">Businesses</button>
+        </div>
+
+        <div class="tab-content active" data-content="people">
+          <div class="feedback-list">
+            <blockquote>"I'm tired of being shown things that are popular but not right."</blockquote>
+            <blockquote>"This explains why most platforms exhaust me."</blockquote>
+            <blockquote>"I don't need more options — I need better alignment."</blockquote>
+          </div>
+          <span class="feedback-label">Early user feedback</span>
+        </div>
+
+        <div class="tab-content" data-content="businesses">
+          <div class="feedback-list">
+            <blockquote>"I don't want more leads. I want the right ones."</blockquote>
+            <blockquote>"This feels like positioning without marketing language."</blockquote>
+            <blockquote>"If discovery worked this way, we'd stop chasing attention."</blockquote>
+          </div>
+          <span class="feedback-label">Business operator feedback</span>
+        </div>
+      </div>
+
+      <div class="proof-cta" data-reveal>
+        <p class="cta-intro">If this resonates, you can add your perspective.</p>
+        <div class="cta-row">
+          <button class="btn secondary">Share user feedback</button>
+          <button class="btn secondary">Share business feedback</button>
+        </div>
+      </div>
+    </section>
+
     <!-- PRINCIPLES -->
     <section class="about-section">
       <div class="section-head" data-reveal>
@@ -237,7 +280,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="section-head" data-reveal>
         <h2>How ETHOS earns trust</h2>
         <p>
-          Professionals don’t fund narratives — they fund systems that can prove integrity and scale.
+          Professionals don't fund narratives — they fund systems that can prove integrity and scale.
         </p>
       </div>
 
@@ -399,6 +442,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         build();
         new ResizeObserver(build).observe(field);
       }
+
+      // tab functionality
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tab = btn.dataset.tab;
+          
+          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+          
+          btn.classList.add('active');
+          document.querySelector(`[data-content="${tab}"]`)?.classList.add('active');
+        });
+      });
     })();
   </script>
 
@@ -560,6 +616,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       background: linear-gradient(180deg, rgba(120,170,255,0.14), rgba(255,255,255,0.04));
       box-shadow: 0 0 0 1px rgba(120,170,255,0.12), 0 18px 60px rgba(0,0,0,0.55);
     }
+    .btn.secondary {
+      border: 1px solid rgba(120,170,255,0.22);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.85);
+    }
+    .btn.secondary:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(120,170,255,0.32);
+    }
 
     .hero-sub {
       margin-top: 2.2rem;
@@ -659,12 +724,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
     .thesis-glow.draw {
       opacity: 0.9;
-      transition: opacity 600ms ease;
-      transition-delay: 80ms;
-      transition-property: opacity;
-    }
-    .thesis-glow.draw {
       transition: opacity 600ms ease, stroke-dashoffset 1400ms ease;
+      transition-delay: 80ms;
     }
 
     .node-conn {
@@ -880,6 +941,107 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       color: rgba(255,255,255,0.72);
     }
 
+    /* PROOF TABS */
+    .proof-tabs {
+      margin-top: 2.5rem;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 850ms ease, transform 850ms ease;
+    }
+    .proof-tabs.is-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tab-controls {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      margin-bottom: 2.5rem;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 0.75rem 1rem;
+      color: rgba(255,255,255,0.50);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .tab-btn.active {
+      color: rgba(255,255,255,0.92);
+      border-bottom-color: rgba(120,170,255,0.92);
+    }
+
+    .tab-btn:hover {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .feedback-list {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .feedback-list blockquote {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      font-style: normal;
+      margin: 0;
+      color: rgba(255,255,255,0.85);
+      padding-left: 1.2rem;
+      border-left: 2px solid rgba(120,170,255,0.22);
+    }
+
+    .feedback-label {
+      display: block;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      text-align: left;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .proof-cta {
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 850ms ease, transform 850ms ease;
+    }
+    .proof-cta.is-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cta-intro {
+      color: rgba(255,255,255,0.60);
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
     /* PRINCIPLES */
     .principles {
       display: grid;
@@ -1071,6 +1233,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .p.is-in,
     .proof.is-in,
     .proof-banner.is-in,
+    .proof-tabs.is-in,
+    .proof-cta.is-in,
     .about-close.is-in {
       opacity: 1;
       transform: translateY(0);
@@ -1093,6 +1257,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       .proof-grid { grid-template-columns: 1fr; }
       .proof-banner { grid-template-columns: 1fr; }
       .pointer { opacity: 0.55; }
+      
+      .cta-row {
+        flex-direction: column;
+        max-width: 300px;
+        margin: 0 auto;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {

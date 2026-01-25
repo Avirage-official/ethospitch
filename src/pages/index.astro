@@ -20,7 +20,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
 
     <div class="hero-ctas">
-      <a
+      
         href="https://discover.ethos-official.com"
         class="cta primary"
         target="_blank"
@@ -29,7 +29,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         Discover your identity
       </a>
 
-      <a
+      
         href="https://app.ethos-official.com"
         class="cta ghost"
         target="_blank"
@@ -58,6 +58,49 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </p>
 </section>
 
+<!-- PROOF OF PULL -->
+<section class="proof-pull">
+  <div class="proof-inner">
+    <h2 class="proof-title">Why people want this to exist</h2>
+    <p class="proof-intro">
+      Before using ETHOS, we asked people and businesses if this system should exist at all.
+    </p>
+
+    <div class="proof-tabs">
+      <div class="tab-controls">
+        <button class="tab-btn active" data-tab="people">People</button>
+        <button class="tab-btn" data-tab="businesses">Businesses</button>
+      </div>
+
+      <div class="tab-content active" data-content="people">
+        <div class="feedback-list">
+          <blockquote>"I'm tired of being shown things that are popular but not right."</blockquote>
+          <blockquote>"This explains why most platforms exhaust me."</blockquote>
+          <blockquote>"I don't need more options — I need better alignment."</blockquote>
+        </div>
+        <span class="feedback-label">Early user feedback</span>
+      </div>
+
+      <div class="tab-content" data-content="businesses">
+        <div class="feedback-list">
+          <blockquote>"I don't want more leads. I want the right ones."</blockquote>
+          <blockquote>"This feels like positioning without marketing language."</blockquote>
+          <blockquote>"If discovery worked this way, we'd stop chasing attention."</blockquote>
+        </div>
+        <span class="feedback-label">Business operator feedback</span>
+      </div>
+    </div>
+
+    <div class="proof-cta">
+      <p class="cta-intro">If this resonates, you can add your perspective.</p>
+      <div class="cta-row">
+        <button class="cta secondary">Share user feedback</button>
+        <button class="cta secondary">Share business feedback</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- EXPERIENCE GATEWAYS -->
 <section class="gateways">
   <div class="gateway">
@@ -66,7 +109,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       Understand how you experience the world —
       and why certain paths consistently fit better than others.
     </p>
-    <a
+    
       href="https://discover.ethos-official.com"
       class="cta secondary"
       target="_blank"
@@ -91,8 +134,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <!-- QUOTE -->
 <section class="quote">
   <p>
-    “It’s not about saving time.<br />
-    It’s about never wasting it.”
+    "It's not about saving time.<br />
+    It's about never wasting it."
   </p>
 </section>
 
@@ -114,6 +157,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </section>
 
 </BaseLayout>
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      
+      btn.classList.add('active');
+      document.querySelector(`[data-content="${tab}"]`)?.classList.add('active');
+    });
+  });
+</script>
 
 <style>
 /* ---------- GLOBAL ---------- */
@@ -253,6 +310,114 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   color: rgba(255,255,255,0.9);
 }
 
+/* ---------- PROOF OF PULL ---------- */
+
+.proof-pull {
+  max-width: 820px;
+  margin: 0 auto 10rem;
+  padding: 0 1.5rem;
+}
+
+.proof-inner {
+  text-align: center;
+}
+
+.proof-title {
+  font-size: clamp(2.1rem, 4vw, 2.6rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.proof-intro {
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 3rem;
+  font-size: 1.05rem;
+}
+
+.proof-tabs {
+  margin-top: 3rem;
+}
+
+.tab-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 2.5rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.tab-btn.active {
+  color: rgba(255,255,255,0.92);
+  border-bottom-color: rgba(255,255,255,0.92);
+}
+
+.tab-btn:hover {
+  color: rgba(255,255,255,0.75);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.feedback-list {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.feedback-list blockquote {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-style: normal;
+  margin: 0;
+  color: rgba(255,255,255,0.85);
+  padding-left: 1.2rem;
+  border-left: 2px solid rgba(255,255,255,0.15);
+}
+
+.feedback-label {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  text-align: left;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.proof-cta {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.cta-intro {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
 /* ---------- GATEWAYS ---------- */
 
 .gateways {
@@ -319,6 +484,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .hero-ctas {
     flex-direction: column;
+  }
+
+  .cta-row {
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
 </style>
