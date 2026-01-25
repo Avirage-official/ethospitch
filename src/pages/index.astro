@@ -20,7 +20,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
 
     <div class="hero-ctas">
-      
+      <a
         href="https://discover.ethos-official.com"
         class="cta primary"
         target="_blank"
@@ -28,7 +28,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       >
         Discover your identity
       </a>
-      
+
+      <a
         href="https://app.ethos-official.com"
         class="cta ghost"
         target="_blank"
@@ -108,7 +109,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       Understand how you experience the world —
       and why certain paths consistently fit better than others.
     </p>
-    
+
+    <a
       href="https://discover.ethos-official.com"
       class="cta secondary"
       target="_blank"
@@ -124,6 +126,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       Explore the system, economics, and long-term thinking
       behind ETHOS.
     </p>
+
     <a href="/deck" class="cta secondary">
       View the deck →
     </a>
@@ -161,10 +164,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const tab = btn.dataset.tab;
-      
+
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-      
+
       btn.classList.add('active');
       document.querySelector(`[data-content="${tab}"]`)?.classList.add('active');
     });
@@ -333,6 +336,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   font-size: 1.05rem;
 }
 
+/* ---------- TABS ---------- */
+
 .proof-tabs {
   margin-top: 3rem;
 }
@@ -361,10 +366,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   border-bottom-color: rgba(255,255,255,0.92);
 }
 
-.tab-btn:hover {
-  color: rgba(255,255,255,0.75);
-}
-
 .tab-content {
   display: none;
 }
@@ -372,6 +373,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 .tab-content.active {
   display: block;
 }
+
+/* ---------- FEEDBACK ---------- */
 
 .feedback-list {
   display: grid;
@@ -383,7 +386,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 .feedback-list blockquote {
   font-size: 1.15rem;
   line-height: 1.6;
-  font-style: normal;
   margin: 0;
   color: rgba(255,255,255,0.85);
   padding-left: 1.2rem;
@@ -391,30 +393,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 }
 
 .feedback-label {
-  display: block;
   font-size: 0.85rem;
   color: rgba(255,255,255,0.45);
-  text-align: left;
   font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.proof-cta {
-  margin-top: 3.5rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.cta-intro {
-  color: rgba(255,255,255,0.6);
-  margin-bottom: 1.2rem;
-  font-size: 0.95rem;
-}
-
-.cta-row {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
 }
 
 /* ---------- GATEWAYS ---------- */
@@ -424,18 +405,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   margin: 0 auto 10rem;
   padding: 0 1.5rem;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
-}
-
-.gateway h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.8rem;
 }
 
 .gateway p {
   color: rgba(255,255,255,0.7);
-  line-height: 1.55;
   margin-bottom: 1.6rem;
 }
 
@@ -450,7 +425,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 .quote p {
   font-size: clamp(1.9rem, 3vw, 2.3rem);
-  line-height: 1.25;
   color: rgba(255,255,255,0.92);
 }
 
@@ -461,12 +435,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   margin: 0 auto 6rem;
   padding: 0 1.5rem;
   text-align: center;
-}
-
-.final h2 {
-  font-size: clamp(2.1rem, 4vw, 2.6rem);
-  line-height: 1.15;
-  margin-bottom: 1.4rem;
 }
 
 .final p {
