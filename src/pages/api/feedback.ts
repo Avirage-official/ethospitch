@@ -11,18 +11,18 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
-    // Initialize Google Sheets
+    // Decode base64 credentials
+    const credentials = JSON.parse(
+      Buffer.from(import.meta.env.GOOGLE_CREDENTIALS_BASE64 || '', 'base64').toString()
+    );
+
     const auth = new google.auth.GoogleAuth({
-      credentials: {
-  client_email: import.meta.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-  private_key: import.meta.env.GOOGLE_PRIVATE_KEY?.split('\\n').join('\n'),
-},
+      credentials,
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
     const sheets = google.sheets({ version: 'v4', auth });
 
-    // Append row to sheet
     await sheets.spreadsheets.values.append({
       spreadsheetId: import.meta.env.GOOGLE_SHEET_ID,
       range: 'Sheet1!A:D',
