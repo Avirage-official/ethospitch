@@ -1,73 +1,204 @@
 ---
-// No props needed
+// Matches your ETHOS design system
 ---
 
-<div id="feedback-section" class="bg-blue-50 dark:bg-slate-800 py-16 px-4">
-  <div class="max-w-3xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-4">Help Shape ETHOS</h2>
-    <p class="text-center text-gray-600 dark:text-gray-400 mb-8">
+<div class="feedback-section">
+  <div class="feedback-inner">
+    <h2 class="feedback-title">Help Shape ETHOS</h2>
+    <p class="feedback-subtitle">
       Share your thoughts on this concept - we're listening.
     </p>
 
     <!-- Tab Toggle -->
-    <div class="flex justify-center gap-4 mb-8">
-      <button 
-        id="user-tab" 
-        class="tab-btn active px-6 py-2 rounded-lg font-semibold"
-      >
+    <div class="feedback-tabs">
+      <button id="user-tab" class="feedback-tab active">
         I'm a User
       </button>
-      <button 
-        id="business-tab" 
-        class="tab-btn px-6 py-2 rounded-lg font-semibold"
-      >
+      <button id="business-tab" class="feedback-tab">
         I'm a Business
       </button>
     </div>
 
     <!-- Feedback Form -->
-    <form id="feedback-form" class="bg-white dark:bg-slate-900 p-8 rounded-lg shadow-lg">
+    <form id="feedback-form" class="feedback-form">
       <input type="hidden" id="feedback-type" value="user" />
       
-      <label for="feedback-text" class="block text-sm font-medium mb-2">
+      <label for="feedback-text" class="feedback-label">
         What resonates with you about this idea?
       </label>
       <textarea
         id="feedback-text"
         rows="5"
         required
-        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-slate-800"
+        class="feedback-textarea"
         placeholder="Share your thoughts..."
       ></textarea>
 
-      <label for="feedback-email" class="block text-sm font-medium mb-2 mt-4">
+      <label for="feedback-email" class="feedback-label">
         Email (optional - if you'd like us to follow up)
       </label>
       <input
         type="email"
         id="feedback-email"
-        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-slate-800"
+        class="feedback-input"
         placeholder="your@email.com"
       />
 
-      <button
-        type="submit"
-        class="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition"
-      >
+      <button type="submit" class="feedback-submit">
         Submit Feedback
       </button>
 
-      <div id="feedback-message" class="mt-4 text-center hidden"></div>
+      <div id="feedback-message" class="feedback-message hidden"></div>
     </form>
   </div>
 </div>
 
 <style>
-  .tab-btn {
-    @apply bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-gray-300;
+  .feedback-section {
+    max-width: 720px;
+    margin: 4rem auto 0;
+    padding: 0 1.5rem;
   }
-  .tab-btn.active {
-    @apply bg-blue-600 text-white;
+
+  .feedback-inner {
+    text-align: center;
+  }
+
+  .feedback-title {
+    font-size: clamp(2rem, 3.5vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .feedback-subtitle {
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
+  }
+
+  /* Tabs */
+  .feedback-tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .feedback-tab {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .feedback-tab:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .feedback-tab.active {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  /* Form */
+  .feedback-form {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .feedback-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 0.6rem;
+  }
+
+  .feedback-textarea,
+  .feedback-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+
+  .feedback-textarea:focus,
+  .feedback-input:focus {
+    outline: none;
+    border-color: rgba(120, 170, 255, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .feedback-textarea::placeholder,
+  .feedback-input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .feedback-submit {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    color: #000;
+    border: none;
+    padding: 1rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .feedback-submit:hover {
+    background: #fff;
+    transform: translateY(-1px);
+  }
+
+  .feedback-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .feedback-message.hidden {
+    display: none;
+  }
+
+  .feedback-message.success {
+    background: rgba(74, 222, 128, 0.15);
+    color: rgb(74, 222, 128);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+  }
+
+  .feedback-message.error {
+    background: rgba(248, 113, 113, 0.15);
+    color: rgb(248, 113, 113);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+  }
+
+  @media (max-width: 600px) {
+    .feedback-tabs {
+      flex-direction: column;
+      max-width: 280px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 </style>
 
@@ -107,16 +238,17 @@
 
       if (response.ok) {
         message!.textContent = '✓ Thank you! Your feedback has been submitted.';
-        message!.className = 'mt-4 text-center text-green-600 font-semibold';
-        message!.classList.remove('hidden');
+        message!.className = 'feedback-message success';
         form.reset();
+        typeInput.value = 'user';
+        userTab?.classList.add('active');
+        businessTab?.classList.remove('active');
       } else {
         throw new Error('Failed');
       }
     } catch (error) {
       message!.textContent = '✗ Something went wrong. Please try again.';
-      message!.className = 'mt-4 text-center text-red-600 font-semibold';
-      message!.classList.remove('hidden');
+      message!.className = 'feedback-message error';
     }
   });
 </script>
