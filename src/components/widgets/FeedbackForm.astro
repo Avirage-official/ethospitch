@@ -1,0 +1,122 @@
+---
+// No props needed
+---
+
+<div id="feedback-section" class="bg-blue-50 dark:bg-slate-800 py-16 px-4">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-4">Help Shape ETHOS</h2>
+    <p class="text-center text-gray-600 dark:text-gray-400 mb-8">
+      Share your thoughts on this concept - we're listening.
+    </p>
+
+    <!-- Tab Toggle -->
+    <div class="flex justify-center gap-4 mb-8">
+      <button 
+        id="user-tab" 
+        class="tab-btn active px-6 py-2 rounded-lg font-semibold"
+      >
+        I'm a User
+      </button>
+      <button 
+        id="business-tab" 
+        class="tab-btn px-6 py-2 rounded-lg font-semibold"
+      >
+        I'm a Business
+      </button>
+    </div>
+
+    <!-- Feedback Form -->
+    <form id="feedback-form" class="bg-white dark:bg-slate-900 p-8 rounded-lg shadow-lg">
+      <input type="hidden" id="feedback-type" value="user" />
+      
+      <label for="feedback-text" class="block text-sm font-medium mb-2">
+        What resonates with you about this idea?
+      </label>
+      <textarea
+        id="feedback-text"
+        rows="5"
+        required
+        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-slate-800"
+        placeholder="Share your thoughts..."
+      ></textarea>
+
+      <label for="feedback-email" class="block text-sm font-medium mb-2 mt-4">
+        Email (optional - if you'd like us to follow up)
+      </label>
+      <input
+        type="email"
+        id="feedback-email"
+        class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-slate-800"
+        placeholder="your@email.com"
+      />
+
+      <button
+        type="submit"
+        class="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition"
+      >
+        Submit Feedback
+      </button>
+
+      <div id="feedback-message" class="mt-4 text-center hidden"></div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .tab-btn {
+    @apply bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-gray-300;
+  }
+  .tab-btn.active {
+    @apply bg-blue-600 text-white;
+  }
+</style>
+
+<script>
+  const userTab = document.getElementById('user-tab');
+  const businessTab = document.getElementById('business-tab');
+  const typeInput = document.getElementById('feedback-type') as HTMLInputElement;
+
+  userTab?.addEventListener('click', () => {
+    userTab.classList.add('active');
+    businessTab?.classList.remove('active');
+    typeInput.value = 'user';
+  });
+
+  businessTab?.addEventListener('click', () => {
+    businessTab.classList.add('active');
+    userTab?.classList.remove('active');
+    typeInput.value = 'business';
+  });
+
+  const form = document.getElementById('feedback-form') as HTMLFormElement;
+  const message = document.getElementById('feedback-message');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const text = (document.getElementById('feedback-text') as HTMLTextAreaElement).value;
+    const email = (document.getElementById('feedback-email') as HTMLInputElement).value;
+    const type = typeInput.value;
+
+    try {
+      const response = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text, type, email })
+      });
+
+      if (response.ok) {
+        message!.textContent = '✓ Thank you! Your feedback has been submitted.';
+        message!.className = 'mt-4 text-center text-green-600 font-semibold';
+        message!.classList.remove('hidden');
+        form.reset();
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (error) {
+      message!.textContent = '✗ Something went wrong. Please try again.';
+      message!.className = 'mt-4 text-center text-red-600 font-semibold';
+      message!.classList.remove('hidden');
+    }
+  });
+</script>
