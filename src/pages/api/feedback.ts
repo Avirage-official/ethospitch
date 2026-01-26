@@ -1,6 +1,5 @@
 import type { APIRoute } from 'astro';
-import fs from 'fs/promises';
-import path from 'path';
+import { google } from 'googleapis';
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -12,30 +11,31 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
-    const feedback = {
-      text,
-      type,
-      email: email || null,
-      timestamp: new Date().toISOString(),
-      id: crypto.randomUUID()
-    };
+    // Initialize Google Sheets
+    const auth = new google.auth.GoogleAuth({
+      credentials: {
+        client_email: import.meta.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+        private_key: import.meta.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+      },
+      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
 
-    // Read existing feedback
-    const filePath = path.join(process.cwd(), 'src', 'data', 'feedback.json');
-    let allFeedback: typeof feedback[] = [];
-    
-    try {
-      const existing = await fs.readFile(filePath, 'utf-8');
-      allFeedback = JSON.parse(existing);
-    } catch {
-      // File doesn't exist yet, start fresh
-    }
+    const sheets = google.sheets({ version: 'v4', auth });
 
-    // Add new feedback
-    allFeedback.unshift(feedback);
-
-    // Write back
-    await fs.writeFile(filePath, JSON.stringify(allFeedback, null, 2));
+    // Append row to sheet
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: import.meta.env.GOOGLE_SHEET_ID,
+      range: 'Sheet1!A:D',
+      valueInputOption: 'RAW',
+      requestBody: {
+        values: [[
+          new Date().toISOString(),
+          type,
+          text,
+          email || ''
+        ]]
+      }
+    });
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
@@ -43,6 +43,7 @@ export const POST: APIRoute = async ({ request }) => {
     });
     
   } catch (error) {
+    console.error('Sheets error:', error);
     return new Response(JSON.stringify({ error: 'Failed to save' }), { 
       status: 500 
     });
