@@ -10,9 +10,9 @@ import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
-import vercel from '@astrojs/vercel/static';
-
+import vercel from '@astrojs/vercel/serverless';
 import astrowind from './vendor/integration';
+
 
 import {
   readingTimeRemarkPlugin,
@@ -33,7 +33,7 @@ const whenExternalScripts = (
     : [];
 
 export default defineConfig({
-  output: 'static',
+  output: 'hybrid',
 
   // ✅ REQUIRED EMPTY CONFIG OBJECT (ASTRO 5 TS QUIRK)
   adapter: vercel({}),
