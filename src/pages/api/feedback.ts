@@ -14,9 +14,9 @@ export const POST: APIRoute = async ({ request }) => {
     // Initialize Google Sheets
     const auth = new google.auth.GoogleAuth({
       credentials: {
-        client_email: import.meta.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        private_key: import.meta.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-      },
+  client_email: import.meta.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+  private_key: import.meta.env.GOOGLE_PRIVATE_KEY?.split('\\n').join('\n'),
+},
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
