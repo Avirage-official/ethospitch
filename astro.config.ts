@@ -33,7 +33,7 @@ const whenExternalScripts = (
     : [];
 
 export default defineConfig({
-  output: 'hybrid',
+  output: 'server',
 
   // ✅ REQUIRED EMPTY CONFIG OBJECT (ASTRO 5 TS QUIRK)
   adapter: vercel({}),
