@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import FeedbackForm from '~/components/widgets/FeedbackForm.astro';
 ---
 
 <BaseLayout>
@@ -90,6 +91,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <span class="feedback-label">Business operator feedback</span>
       </div>
     </div>
+
+    <Layout metadata={metadata}>
+  <!-- Your existing Hero, Features, etc -->
+  
+  <FeedbackForm />
+  
+  <!-- Rest of your content -->
+</Layout>
 
     <div class="proof-cta">
       <p class="cta-intro">If this resonates, you can add your perspective.</p>
